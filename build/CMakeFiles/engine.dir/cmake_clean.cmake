@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/engine.dir/src/camera.cpp.o"
+  "CMakeFiles/engine.dir/src/camera.cpp.o.d"
+  "CMakeFiles/engine.dir/src/engine.cpp.o"
+  "CMakeFiles/engine.dir/src/engine.cpp.o.d"
   "CMakeFiles/engine.dir/src/glad.c.o"
   "CMakeFiles/engine.dir/src/glad.c.o.d"
   "CMakeFiles/engine.dir/src/imgui/imgui.cpp.o"

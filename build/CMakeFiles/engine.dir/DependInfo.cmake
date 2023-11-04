@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/abux/Projects/c++/hengine/src/glad.c" "CMakeFiles/engine.dir/src/glad.c.o" "gcc" "CMakeFiles/engine.dir/src/glad.c.o.d"
+  "/home/abux/Projects/c++/hengine/src/camera.cpp" "CMakeFiles/engine.dir/src/camera.cpp.o" "gcc" "CMakeFiles/engine.dir/src/camera.cpp.o.d"
+  "/home/abux/Projects/c++/hengine/src/engine.cpp" "CMakeFiles/engine.dir/src/engine.cpp.o" "gcc" "CMakeFiles/engine.dir/src/engine.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/imgui/imgui.cpp" "CMakeFiles/engine.dir/src/imgui/imgui.cpp.o" "gcc" "CMakeFiles/engine.dir/src/imgui/imgui.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/imgui/imgui_demo.cpp" "CMakeFiles/engine.dir/src/imgui/imgui_demo.cpp.o" "gcc" "CMakeFiles/engine.dir/src/imgui/imgui_demo.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/imgui/imgui_draw.cpp" "CMakeFiles/engine.dir/src/imgui/imgui_draw.cpp.o" "gcc" "CMakeFiles/engine.dir/src/imgui/imgui_draw.cpp.o.d"

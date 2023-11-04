@@ -1,0 +1,15 @@
+cd Projects/c++
+ls
+rm -rf hengine
+git clone https://github.com/abuxTM/hengine.git
+ls
+cd hengine
+nvim
+nvim
+nvim
+nvim
+nvim
+cd Projects/c++/hengine
+nvim
+cd Projects/c++/hengine
+nvim

@@ -1,5 +1,6 @@
-CMakeFiles/engine.dir/src/main.cpp.o: \
- /home/abux/Projects/c++/hengine/src/main.cpp /usr/include/stdc-predef.h \
+CMakeFiles/engine.dir/src/engine.cpp.o: \
+ /home/abux/Projects/c++/hengine/src/engine.cpp \
+ /usr/include/stdc-predef.h \
  /home/abux/Projects/c++/hengine/include/engine.h \
  /home/abux/Projects/c++/hengine/include/glad/glad.h \
  /usr/include/KHR/khrplatform.h \
