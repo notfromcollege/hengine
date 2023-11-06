@@ -16,6 +16,7 @@
 #include <shader.h>
 #include <stb_image.h>
 #include <camera.h>
+#include <gameObject.h>
 
 class Engine {
 public:
@@ -35,13 +36,19 @@ public:
 
 private:
   // Shader
-  unsigned int VBO, VAO, colorVAO, lightVAO;
+  unsigned int VAO, VBO, colorVAO, lightVAO;
+  unsigned int planeVAO, planeVBO;
 
   // Map
-  int cubex = 6;
+  int cubex = 7;
+  float cubesize = 1.0f;
 
   // Lighting
   glm::vec3 lightPos;
+
+  // Camera
+  glm::mat4 projection;
+  glm::mat4 view;
 
   // timing
   float deltaTime = 0.0f;
@@ -50,7 +57,6 @@ private:
   bool wireframeMode = false;
 
   unsigned int texture1, texture2;
-  
 };
 
 #endif

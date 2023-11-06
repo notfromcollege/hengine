@@ -23,3 +23,10 @@ cd hengine
 cd hengine
 ls
 vim
+cd Projects/c++/hengine
+nvim
+cd Projects/c++/hengine
+vim
+vim
+cd Projects/c++/hengine
+nvim

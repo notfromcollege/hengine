@@ -177,6 +177,30 @@ src/engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/engine.cpp.s
 .PHONY : src/engine.cpp.s
 
+src/gameObject.o: src/gameObject.cpp.o
+.PHONY : src/gameObject.o
+
+# target to build an object file
+src/gameObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/gameObject.cpp.o
+.PHONY : src/gameObject.cpp.o
+
+src/gameObject.i: src/gameObject.cpp.i
+.PHONY : src/gameObject.i
+
+# target to preprocess a source file
+src/gameObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/gameObject.cpp.i
+.PHONY : src/gameObject.cpp.i
+
+src/gameObject.s: src/gameObject.cpp.s
+.PHONY : src/gameObject.s
+
+# target to generate assembly for a file
+src/gameObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/gameObject.cpp.s
+.PHONY : src/gameObject.cpp.s
+
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
 
@@ -456,6 +480,9 @@ help:
 	@echo "... src/engine.o"
 	@echo "... src/engine.i"
 	@echo "... src/engine.s"
+	@echo "... src/gameObject.o"
+	@echo "... src/gameObject.i"
+	@echo "... src/gameObject.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
