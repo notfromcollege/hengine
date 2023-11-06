@@ -4,7 +4,7 @@ Engine* engine = nullptr;
 
 int main(int argc, char *argv[]) {
 
-  engine = new Engine(1280, 720);  
+  engine = new Engine(1280, 720);
 
   // Main engine loop
   while (!glfwWindowShouldClose(engine->window)) {

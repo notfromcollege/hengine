@@ -19,14 +19,13 @@
 
 class Engine {
 public:
-  Engine(int swidth, int sheight); 
+  Engine(int swidth, int sheight);
+
+  void init_res();
 
   void update();
   void inputs(GLFWwindow* window);
   void render();
-
-  void framebuffer_size_callback(GLFWwindow *window, int new_width, int new_height);
-  void mouse_callback(GLFWwindow* window, double xposIn, double yposIn);
 
   int new_texture(const char* path_to_texture, GLenum format);
 
@@ -35,13 +34,14 @@ public:
   GLFWwindow* window;
 
 private:
-  unsigned int VBO, VAO;
+  // Shader
+  unsigned int VBO, VAO, colorVAO, lightVAO;
 
-  // camera
-  Camera camera;
-  float lastX = 1280 / 2.0f;
-  float lastY = 720 / 2.0f;
-  bool firstMouse = true;
+  // Map
+  int cubex = 6;
+
+  // Lighting
+  glm::vec3 lightPos;
 
   // timing
   float deltaTime = 0.0f;
@@ -51,7 +51,6 @@ private:
 
   unsigned int texture1, texture2;
   
-  glm::vec3 cubePositions[];
 };
 
 #endif

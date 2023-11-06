@@ -13,3 +13,13 @@ cd Projects/c++/hengine
 nvim
 cd Projects/c++/hengine
 nvim
+cd Projects/c++/hengine
+nvim
+ls dotfiles
+ls dotfiles/config
+cd Projects/c++
+ls
+cd hengine
+cd hengine
+ls
+vim
