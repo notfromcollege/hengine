@@ -40,7 +40,7 @@ private:
   unsigned int planeVAO, planeVBO;
 
   // Map
-  int cubex = 7;
+  int cubex = 6;
   float cubesize = 1.0f;
 
   // Lighting

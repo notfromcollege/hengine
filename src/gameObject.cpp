@@ -87,7 +87,7 @@ void GameObject::render(glm::vec3 pos, glm::mat4 projection, glm::mat4 view) {
   // Set uniforms
   shader->setMat4("projection", projection);
   shader->setMat4("view", view);
-  shader->setVec3("objectColor", 1.0f, 0.15f, 0.31f);
+  shader->setVec3("objectColor", 0.0f, 0.31f, 0.31f);
   shader->setVec3("lightColor",  1.0f, 1.0f, 1.0f);
 
   // Render

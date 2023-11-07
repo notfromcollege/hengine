@@ -96,9 +96,11 @@ Engine::Engine(int swidth, int sheight) {
   texture1 = new_texture("assets/images/wall.jpg", GL_RGB);
   texture2 = new_texture("assets/images/awesomeface.png", GL_RGBA);
 
-  camera = Camera(glm::vec3(0.0f, 0.0f, 3.0f));
-  cube = new GameObject(CUBE, m_color_shader);
-  cubeTex = new GameObject(PLANE, m_shader, texture1, texture2);
+  int texture3 = new_texture("assets/images/crate.jpg", GL_RGB);
+
+  camera = Camera(glm::vec3(0.0f, 1.5f, 3.0f));
+  cube = new GameObject(CUBE, m_shader, texture3, 0);
+  cubeTex = new GameObject(PLANE, m_shader, texture1, 0);
 }
 
 void Engine::update() {
@@ -157,8 +159,12 @@ void Engine::render() {
     }
   }
 
-  for (unsigned int i = 0; i < 4; i++) {
-    cube->render(glm::vec3(1.0f*(i*2), 1.0f, 0.0f), projection, view);
+  for (unsigned int x = 0; x < cubex; x++) {
+    for (unsigned int y = 0; y < 2; y++) {
+      for (unsigned int z = 0; z < cubex; z++) {
+        if (x == 0 || x == cubex - 1 || z == 0 || z == cubex - 1) cube->render(glm::vec3(1.0f*x, 1.0f+y, 1.0f*z), projection, view);
+      }
+    }
   }
 
   // Check all events and swap buffers

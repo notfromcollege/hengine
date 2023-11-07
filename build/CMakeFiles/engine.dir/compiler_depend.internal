@@ -307,7 +307,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o
  /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h
  /home/abux/Projects/c++/hengine/include/shader.h
  /home/abux/Projects/c++/hengine/include/stb_image.h
- /home/abux/Projects/c++/hengine/include/vertexHelper.h
  /usr/include/GLFW/glfw3.h
  /usr/include/KHR/khrplatform.h
  /usr/include/alloca.h
@@ -741,7 +740,6 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o
  /home/abux/Projects/c++/hengine/include/gameObject.h
  /home/abux/Projects/c++/hengine/include/glad/glad.h
  /home/abux/Projects/c++/hengine/include/shader.h
- /home/abux/Projects/c++/hengine/include/vertexHelper.h
  /usr/include/GLFW/glfw3.h
  /usr/include/KHR/khrplatform.h
  /usr/include/alloca.h
@@ -2406,7 +2404,6 @@ CMakeFiles/engine.dir/src/main.cpp.o
  /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h
  /home/abux/Projects/c++/hengine/include/shader.h
  /home/abux/Projects/c++/hengine/include/stb_image.h
- /home/abux/Projects/c++/hengine/include/vertexHelper.h
  /usr/include/GLFW/glfw3.h
  /usr/include/KHR/khrplatform.h
  /usr/include/alloca.h

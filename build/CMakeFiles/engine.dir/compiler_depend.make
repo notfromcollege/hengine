@@ -305,7 +305,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
   /home/abux/Projects/c++/hengine/include/stb_image.h \
-  /home/abux/Projects/c++/hengine/include/vertexHelper.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
@@ -738,7 +737,6 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/
   /home/abux/Projects/c++/hengine/include/gameObject.h \
   /home/abux/Projects/c++/hengine/include/glad/glad.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
-  /home/abux/Projects/c++/hengine/include/vertexHelper.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
@@ -2394,7 +2392,6 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
   /home/abux/Projects/c++/hengine/include/stb_image.h \
-  /home/abux/Projects/c++/hengine/include/vertexHelper.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
@@ -4068,10 +4065,6 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vaesintrin.h:
 
-/home/abux/Projects/c++/hengine/include/vertexHelper.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/popcntintrin.h:
-
 /usr/include/GLFW/glfw3.h:
 
 /usr/include/c++/13.2.1/istream:
@@ -4173,10 +4166,6 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 /usr/include/glm/mat4x3.hpp:
 
 /usr/include/c++/13.2.1/cctype:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h:
-
-/usr/include/c++/13.2.1/cerrno:
 
 /usr/include/bits/fp-logb.h:
 
@@ -4342,6 +4331,10 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bwintrin.h:
 
+/usr/include/c++/13.2.1/cerrno:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512dqintrin.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
@@ -4405,6 +4398,8 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mmintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pconfigintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/popcntintrin.h:
 
 /usr/include/c++/13.2.1/tr1/special_function_util.h:
 
