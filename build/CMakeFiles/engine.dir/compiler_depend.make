@@ -304,6 +304,7 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
+  /home/abux/Projects/c++/hengine/include/skybox.h \
   /home/abux/Projects/c++/hengine/include/stb_image.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
@@ -2391,6 +2392,7 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
+  /home/abux/Projects/c++/hengine/include/skybox.h \
   /home/abux/Projects/c++/hengine/include/stb_image.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
@@ -3349,8 +3351,6 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 
 /home/abux/Projects/c++/hengine/src/imgui/imgui_demo.cpp:
 
-/usr/include/glm/gtc/matrix_transform.hpp:
-
 /usr/include/glm/gtc/constants.inl:
 
 /usr/include/glm/ext/vector_uint2.hpp:
@@ -3829,6 +3829,10 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 
 /usr/include/glm/ext/vector_float4.hpp:
 
+/usr/include/glm/gtc/matrix_transform.hpp:
+
+/home/abux/Projects/c++/hengine/include/skybox.h:
+
 /usr/include/bits/fp-fast.h:
 
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h:
@@ -4163,6 +4167,10 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 
 /usr/include/c++/13.2.1/cctype:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h:
+
+/usr/include/c++/13.2.1/cerrno:
+
 /usr/include/bits/fp-logb.h:
 
 /usr/include/c++/13.2.1/clocale:
@@ -4330,10 +4338,6 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16intrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bwintrin.h:
-
-/usr/include/c++/13.2.1/cerrno:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512dqintrin.h:
 

@@ -141,7 +141,11 @@ CMakeFiles/engine.dir/src/engine.cpp.o: \
  /usr/include/c++/13.2.1/bits/locale_facets.tcc \
  /usr/include/c++/13.2.1/bits/basic_ios.tcc \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
- /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/glm/glm.hpp \
+ /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/c++/13.2.1/vector \
+ /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/13.2.1/bits/stl_vector.h \
+ /usr/include/c++/13.2.1/bits/stl_bvector.h \
+ /usr/include/c++/13.2.1/bits/vector.tcc /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/c++/13.2.1/cmath \
  /usr/include/math.h /usr/include/bits/math-vector.h \
  /usr/include/bits/libm-simd-decl-stubs.h \
@@ -341,10 +345,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: \
  /usr/include/c++/13.2.1/bits/sstream.tcc \
  /home/abux/Projects/c++/hengine/include/stb_image.h \
  /usr/include/c++/13.2.1/stdlib.h \
+ /home/abux/Projects/c++/hengine/include/skybox.h \
  /home/abux/Projects/c++/hengine/include/camera.h \
- /usr/include/c++/13.2.1/vector \
- /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/13.2.1/bits/stl_vector.h \
- /usr/include/c++/13.2.1/bits/stl_bvector.h \
- /usr/include/c++/13.2.1/bits/vector.tcc \
  /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h

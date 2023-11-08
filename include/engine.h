@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <vector>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -15,6 +16,7 @@
 
 #include <shader.h>
 #include <stb_image.h>
+#include <skybox.h>
 #include <camera.h>
 #include <cubeObject.h>
 
@@ -40,6 +42,7 @@ private:
   unsigned int planeVAO, planeVBO;
 
   // Map
+  unsigned int skyboxTex;
   int cubex = 6;
   float cubesize = 1.0f;
 

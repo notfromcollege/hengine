@@ -34,3 +34,5 @@ cd Projects/c++/hengine
 nvim
 cd Projects/c++/hengine
 vim
+cd Projects/c++/hengine
+nvim

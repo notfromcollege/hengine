@@ -11,19 +11,28 @@
 
 #include <shader.h>
 
+enum ObjectShader {
+  COLOR,
+  TEXTURED,
+};
+
 class CubeObject {
 public:
-  CubeObject(glm::vec3 pos);
-  ~CubeObject();
+  CubeObject(glm::vec3 pos, ObjectShader objectShader=COLOR);
+  void clean();
 
   void update();
   void render(glm::mat4 projection, glm::mat4 view);
+
   void setPos(glm::vec3 pos) { this->pos = pos; }
+  void setTexture(unsigned int texture1, unsigned int texture2) { this->texture1 = texture1; this->texture2 = texture2; }
 
 private:
-  Shader* shader = new Shader("shaders/color_shader.vs", "shaders/color_shader.fs");
+  Shader* shader;
+  ObjectShader objectShader;
   unsigned int VAO, VBO;
   unsigned int verticesSize;
+  unsigned int texture1, texture2;
   glm::vec3 pos;
 
 

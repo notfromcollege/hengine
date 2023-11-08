@@ -1,12 +1,12 @@
 TODO:
-  Create more gameobjects (Plane, Light sources, etc)
-  Create cubemap / skybox
   Load some 3D objects (weapons, swords, etc)
   Create particles
 
 DOING:
+  Create more gameobjects (Plane, Light sources, etc)
 
 DONE:
+  Create cubemap / skybox
 
 
 

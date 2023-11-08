@@ -1,12 +1,13 @@
 #include <engine.h>
 
+Skybox* skybox = nullptr;
 CubeObject* cube = nullptr;
 
 int screen_width, screen_height;
-float background[] = { 0.082f, 0.082f, 0.082f, 1.0f };
+float background[] = { 0.912f, 0.912f, 0.912f, 1.0f };
 
 // camera
-Camera camera;
+Camera* camera = nullptr;
 float lastX = 1280 / 2.0f;
 float lastY = 720 / 2.0f;
 bool firstMouse = true;
@@ -35,7 +36,7 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn) {
   lastX = xpos;
   lastY = ypos;
 
-  camera.ProcessMouseMovement(xoffset, yoffset);
+  camera->ProcessMouseMovement(xoffset, yoffset);
 }
 
 Engine::Engine(int swidth, int sheight) {
@@ -82,11 +83,26 @@ Engine::Engine(int swidth, int sheight) {
   ImGui_ImplGlfw_InitForOpenGL(window, true);
   ImGui_ImplOpenGL3_Init("#version 330 core");
 
-  camera = Camera(glm::vec3(0.0f, 1.5f, 3.0f));
+  // Load skybox
+  std::vector<std::string> skyboxFaces {
+    "assets/skybox/right.jpg",
+    "assets/skybox/left.jpg",
+    "assets/skybox/top.jpg",
+    "assets/skybox/bottom.jpg",
+    "assets/skybox/front.jpg",
+    "assets/skybox/back.jpg",
+  };
+  skybox = new Skybox(skyboxFaces);
+
+  camera = new Camera(glm::vec3(0.0f, 1.5f, 3.0f));
   lightPos = glm::vec3(2.0f, 4.0f, 2.0f);
 
+  texture1 = new_texture("assets/images/wall.jpg", GL_RGB);
+  texture2 = new_texture("assets/images/awesomeface.png", GL_RGBA);
+
   // GameObjects
-  cube = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f));
+  cube = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), TEXTURED);
+  cube->setTexture(texture1, texture2);
 }
 
 void Engine::update() {
@@ -99,8 +115,8 @@ void Engine::update() {
   if (wireframeMode) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); else glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); 
 
   // camera/view transformation
-  projection = glm::perspective(glm::radians(camera.Fov), (float)screen_width / (float)screen_height, 0.1f, 100.0f);
-  view = camera.GetViewMatrix();
+  projection = glm::perspective(glm::radians(camera->Fov), (float)screen_width / (float)screen_height, 0.1f, 100.0f);
+  view = camera->GetViewMatrix();
 }
 
 void Engine::inputs(GLFWwindow *window) {
@@ -109,13 +125,13 @@ void Engine::inputs(GLFWwindow *window) {
   if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS) mouseLocked = false;
   if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS) mouseLocked = true;
 
-  if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) camera.ProcessKeyboard(FORWARD, deltaTime);
-  if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera.ProcessKeyboard(BACKWARD, deltaTime);
-  if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) camera.ProcessKeyboard(LEFT, deltaTime);
-  if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) camera.ProcessKeyboard(RIGHT, deltaTime);
-  if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) camera.ProcessKeyboard(UP, deltaTime);
-  if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) camera.ProcessKeyboard(DOWN, deltaTime);
-  if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) camera.Sprinting = true; else camera.Sprinting = false;
+  if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) camera->ProcessKeyboard(FORWARD, deltaTime);
+  if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera->ProcessKeyboard(BACKWARD, deltaTime);
+  if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) camera->ProcessKeyboard(LEFT, deltaTime);
+  if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) camera->ProcessKeyboard(RIGHT, deltaTime);
+  if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) camera->ProcessKeyboard(UP, deltaTime);
+  if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) camera->ProcessKeyboard(DOWN, deltaTime);
+  if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) camera->Sprinting = true; else camera->Sprinting = false;
 }
 
 void Engine::render() {
@@ -125,7 +141,7 @@ void Engine::render() {
 
   ImGui::Begin("World");
   ImGui::Checkbox("Wireframe mode", &wireframeMode);
-  ImGui::SliderFloat("FOV", &camera.Fov, 45.0f, 120.0f);
+  ImGui::SliderFloat("FOV", &camera->Fov, 45.0f, 120.0f);
   ImGui::ColorEdit4("Background", background);
   ImGui::Text("Map");
   ImGui::SliderInt("CubexLen", &cubex, 1, 100);
@@ -144,6 +160,8 @@ void Engine::render() {
       }
     }
   }
+
+  skybox->render(camera, projection, view);
 
   // Check all events and swap buffers
   ImGui::Render();
@@ -186,6 +204,8 @@ void Engine::clean() {
   glDeleteVertexArrays(1, &VAO);
   glDeleteVertexArrays(1, &lightVAO);
   glDeleteBuffers(1, &VBO);
+  cube->clean();
+  skybox->clean();
 
   glfwTerminate();
 }
