@@ -1,7 +1,7 @@
-CMakeFiles/engine.dir/src/gameObject.cpp.o: \
- /home/abux/Projects/c++/hengine/src/gameObject.cpp \
+CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o: \
+ /home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp \
  /usr/include/stdc-predef.h \
- /home/abux/Projects/c++/hengine/include/gameObject.h \
+ /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h \
  /home/abux/Projects/c++/hengine/include/glad/glad.h \
  /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \

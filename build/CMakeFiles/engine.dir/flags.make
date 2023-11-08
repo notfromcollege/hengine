@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm
+C_INCLUDES = -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm
 
 C_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm
+CXX_INCLUDES = -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm
 
 CXX_FLAGS = -g
 

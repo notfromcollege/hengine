@@ -16,7 +16,7 @@
 #include <shader.h>
 #include <stb_image.h>
 #include <camera.h>
-#include <gameObject.h>
+#include <cubeObject.h>
 
 class Engine {
 public:

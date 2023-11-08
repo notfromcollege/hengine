@@ -1,11 +1,6 @@
 #include <engine.h>
 
-Shader* m_shader = nullptr;
-Shader* m_color_shader = nullptr;
-Shader* m_light_shader = nullptr;
-
-GameObject* cube = nullptr;
-GameObject* cubeTex = nullptr;
+CubeObject* cube = nullptr;
 
 int screen_width, screen_height;
 float background[] = { 0.082f, 0.082f, 0.082f, 1.0f };
@@ -79,8 +74,7 @@ Engine::Engine(int swidth, int sheight) {
   // Setup imgui
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
-  ImGuiIO &io = ImGui::GetIO();
-  (void)io;
+  ImGuiIO &io = ImGui::GetIO();(void)io;
 
   // Imgui style
   ImGui::StyleColorsDark();
@@ -88,19 +82,11 @@ Engine::Engine(int swidth, int sheight) {
   ImGui_ImplGlfw_InitForOpenGL(window, true);
   ImGui_ImplOpenGL3_Init("#version 330 core");
 
-  // Load shaders
-  m_shader = new Shader("shaders/shader.vs", "shaders/shader.fs");
-  m_color_shader = new Shader("shaders/color_shader.vs", "shaders/color_shader.fs");
-  m_light_shader = new Shader("shaders/light_shader.vs", "shaders/light_shader.fs");
-
-  texture1 = new_texture("assets/images/wall.jpg", GL_RGB);
-  texture2 = new_texture("assets/images/awesomeface.png", GL_RGBA);
-
-  int texture3 = new_texture("assets/images/crate.jpg", GL_RGB);
-
   camera = Camera(glm::vec3(0.0f, 1.5f, 3.0f));
-  cube = new GameObject(CUBE, m_shader, texture3, 0);
-  cubeTex = new GameObject(PLANE, m_shader, texture1, 0);
+  lightPos = glm::vec3(2.0f, 4.0f, 2.0f);
+
+  // GameObjects
+  cube = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f));
 }
 
 void Engine::update() {
@@ -109,7 +95,7 @@ void Engine::update() {
   deltaTime = currentFrame - lastFrame;
   lastFrame = currentFrame;
   
-  if (mouseLocked) glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); else glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+  if (mouseLocked)   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); else glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
   if (wireframeMode) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); else glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); 
 
   // camera/view transformation
@@ -144,25 +130,17 @@ void Engine::render() {
   ImGui::Text("Map");
   ImGui::SliderInt("CubexLen", &cubex, 1, 100);
   ImGui::SliderFloat("Objects size", &cubesize, 1.0f, 10.0f);
+  ImGui::InputFloat3("Light pos", &lightPos[0]);
   ImGui::End();
 
   // Rendering functions here
   glClearColor(background[0], background[1], background[2], background[3]);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  // Draw triangle
-  m_shader->use();
-
-  for (unsigned int x = 0; x < cubex; x++) {
-    for (unsigned int z = 0; z < cubex; z++) {
-      cubeTex->render(glm::vec3(1.0f*x, 0.0f, 1.0f*z), projection, view);
-    }
-  }
-
   for (unsigned int x = 0; x < cubex; x++) {
     for (unsigned int y = 0; y < 2; y++) {
       for (unsigned int z = 0; z < cubex; z++) {
-        if (x == 0 || x == cubex - 1 || z == 0 || z == cubex - 1) cube->render(glm::vec3(1.0f*x, 1.0f+y, 1.0f*z), projection, view);
+        if (x == 0 || x == cubex - 1 || z == 0 || z == cubex - 1) { cube->render(projection, view); cube->setPos(glm::vec3(x, y, z)); }
       }
     }
   }

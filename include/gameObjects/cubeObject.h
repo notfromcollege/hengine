@@ -1,5 +1,5 @@
-#ifndef GAMEOBJECT_H
-#define GAMEOBJECT_H
+#ifndef CUBEOBJECT_H
+#define CUBEOBJECT_H
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -11,33 +11,24 @@
 
 #include <shader.h>
 
-enum ObjectType {
-  CUBE,
-  PLANE,
-};
-
-class GameObject {
+class CubeObject {
 public:
-  GameObject(ObjectType objectType, Shader* shader, unsigned int texture1, unsigned int texture2);
-  GameObject(ObjectType objectType, Shader* shader);
-  ~GameObject();
+  CubeObject(glm::vec3 pos);
+  ~CubeObject();
 
-  void objectSetup();
-  void render(glm::vec3 pos, glm::mat4 projection, glm::mat4 view);
+  void update();
+  void render(glm::mat4 projection, glm::mat4 view);
+  void setPos(glm::vec3 pos) { this->pos = pos; }
 
 private:
-  Shader* shader;
+  Shader* shader = new Shader("shaders/color_shader.vs", "shaders/color_shader.fs");
   unsigned int VAO, VBO;
-  ObjectType type;
-
-  unsigned int texture1;
-  unsigned int texture2;
-
-  int verticesSize;
+  unsigned int verticesSize;
+  glm::vec3 pos;
 
 
-
-  float cubeVertices[180] = {
+  float vertices[180] = {
+    // Pos                // Tex
     -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
      0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
      0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
@@ -79,14 +70,6 @@ private:
      0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
     -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
     -0.5f,  0.5f, -0.5f,  0.0f, 0.0f
-  };
-  float planeVertices[30] = {
-   -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-    0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-    0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-    0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-   -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-   -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
   };
 };
 

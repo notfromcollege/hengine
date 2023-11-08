@@ -97,19 +97,19 @@ CMakeFiles/engine.dir/src/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/src/engine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abux/Projects/c++/hengine/src/engine.cpp -o CMakeFiles/engine.dir/src/engine.cpp.s
 
-CMakeFiles/engine.dir/src/gameObject.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/gameObject.cpp
-CMakeFiles/engine.dir/src/gameObject.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c++/hengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/src/gameObject.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/src/gameObject.cpp.o -MF CMakeFiles/engine.dir/src/gameObject.cpp.o.d -o CMakeFiles/engine.dir/src/gameObject.cpp.o -c /home/abux/Projects/c++/hengine/src/gameObject.cpp
+CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o: /home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp
+CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c++/hengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o -MF CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o.d -o CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o -c /home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp
 
-CMakeFiles/engine.dir/src/gameObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/src/gameObject.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abux/Projects/c++/hengine/src/gameObject.cpp > CMakeFiles/engine.dir/src/gameObject.cpp.i
+CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp > CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.i
 
-CMakeFiles/engine.dir/src/gameObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/src/gameObject.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abux/Projects/c++/hengine/src/gameObject.cpp -o CMakeFiles/engine.dir/src/gameObject.cpp.s
+CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp -o CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.s
 
 CMakeFiles/engine.dir/src/glad.c.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/src/glad.c.o: /home/abux/Projects/c++/hengine/src/glad.c
@@ -269,7 +269,7 @@ CMakeFiles/engine.dir/src/stb_image.cpp.s: cmake_force
 engine_OBJECTS = \
 "CMakeFiles/engine.dir/src/camera.cpp.o" \
 "CMakeFiles/engine.dir/src/engine.cpp.o" \
-"CMakeFiles/engine.dir/src/gameObject.cpp.o" \
+"CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o" \
 "CMakeFiles/engine.dir/src/glad.c.o" \
 "CMakeFiles/engine.dir/src/imgui/imgui.cpp.o" \
 "CMakeFiles/engine.dir/src/imgui/imgui_demo.cpp.o" \
@@ -287,7 +287,7 @@ engine_EXTERNAL_OBJECTS =
 
 engine: CMakeFiles/engine.dir/src/camera.cpp.o
 engine: CMakeFiles/engine.dir/src/engine.cpp.o
-engine: CMakeFiles/engine.dir/src/gameObject.cpp.o
+engine: CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o
 engine: CMakeFiles/engine.dir/src/glad.c.o
 engine: CMakeFiles/engine.dir/src/imgui/imgui.cpp.o
 engine: CMakeFiles/engine.dir/src/imgui/imgui_demo.cpp.o

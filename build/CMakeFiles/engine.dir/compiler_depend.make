@@ -297,7 +297,7 @@ CMakeFiles/engine.dir/src/camera.cpp.o: /home/abux/Projects/c++/hengine/src/came
 CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engine.cpp \
   /home/abux/Projects/c++/hengine/include/camera.h \
   /home/abux/Projects/c++/hengine/include/engine.h \
-  /home/abux/Projects/c++/hengine/include/gameObject.h \
+  /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h \
   /home/abux/Projects/c++/hengine/include/glad/glad.h \
   /home/abux/Projects/c++/hengine/include/imgui/imconfig.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui.h \
@@ -733,8 +733,8 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h
 
-CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/gameObject.cpp \
-  /home/abux/Projects/c++/hengine/include/gameObject.h \
+CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o: /home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp \
+  /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h \
   /home/abux/Projects/c++/hengine/include/glad/glad.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
   /usr/include/GLFW/glfw3.h \
@@ -2384,7 +2384,7 @@ CMakeFiles/engine.dir/src/imgui/imgui_widgets.cpp.o: /home/abux/Projects/c++/hen
 CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.cpp \
   /home/abux/Projects/c++/hengine/include/camera.h \
   /home/abux/Projects/c++/hengine/include/engine.h \
-  /home/abux/Projects/c++/hengine/include/gameObject.h \
+  /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h \
   /home/abux/Projects/c++/hengine/include/glad/glad.h \
   /home/abux/Projects/c++/hengine/include/imgui/imconfig.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui.h \
@@ -3599,6 +3599,8 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 
 /usr/include/bits/thread-shared-types.h:
 
+/home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h:
+
 /usr/include/glm/ext/scalar_constants.inl:
 
 /usr/include/glm/ext/vector_uint3_sized.hpp:
@@ -3738,8 +3740,6 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 /usr/include/wchar.h:
 
 /usr/include/bits/local_lim.h:
-
-/home/abux/Projects/c++/hengine/src/gameObject.cpp:
 
 /usr/include/bits/long-double.h:
 
@@ -4031,8 +4031,6 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 
 /usr/include/c++/13.2.1/bits/locale_facets.tcc:
 
-/home/abux/Projects/c++/hengine/include/gameObject.h:
-
 /usr/include/limits.h:
 
 /usr/include/linux/limits.h:
@@ -4094,8 +4092,6 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxfp16intrin.h:
 
 /usr/include/bits/types/__mbstate_t.h:
-
-/usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/c++/13.2.1/bits/stl_iterator.h:
 
@@ -4304,6 +4300,10 @@ CMakeFiles/engine.dir/src/stb_image.cpp.o: /home/abux/Projects/c++/hengine/src/s
 /usr/include/glm/ext/quaternion_transform.inl:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16vlintrin.h:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+/home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp:
 
 /home/abux/Projects/c++/hengine/include/imgui/imgui_internal.h:
 

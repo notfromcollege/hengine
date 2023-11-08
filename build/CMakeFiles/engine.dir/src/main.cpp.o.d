@@ -346,4 +346,4 @@ CMakeFiles/engine.dir/src/main.cpp.o: \
  /usr/include/c++/13.2.1/bits/stl_vector.h \
  /usr/include/c++/13.2.1/bits/stl_bvector.h \
  /usr/include/c++/13.2.1/bits/vector.tcc \
- /home/abux/Projects/c++/hengine/include/gameObject.h
+ /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h

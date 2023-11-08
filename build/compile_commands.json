@@ -1,85 +1,85 @@
 [
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/camera.cpp.o -c /home/abux/Projects/c++/hengine/src/camera.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/camera.cpp.o -c /home/abux/Projects/c++/hengine/src/camera.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/camera.cpp",
   "output": "CMakeFiles/engine.dir/src/camera.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/engine.cpp.o -c /home/abux/Projects/c++/hengine/src/engine.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/engine.cpp.o -c /home/abux/Projects/c++/hengine/src/engine.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/engine.cpp",
   "output": "CMakeFiles/engine.dir/src/engine.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/gameObject.cpp.o -c /home/abux/Projects/c++/hengine/src/gameObject.cpp",
-  "file": "/home/abux/Projects/c++/hengine/src/gameObject.cpp",
-  "output": "CMakeFiles/engine.dir/src/gameObject.cpp.o"
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o -c /home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp",
+  "file": "/home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp",
+  "output": "CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/glad.c.o -c /home/abux/Projects/c++/hengine/src/glad.c",
+  "command": "/usr/bin/cc  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/glad.c.o -c /home/abux/Projects/c++/hengine/src/glad.c",
   "file": "/home/abux/Projects/c++/hengine/src/glad.c",
   "output": "CMakeFiles/engine.dir/src/glad.c.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/imgui/imgui.cpp",
   "output": "CMakeFiles/engine.dir/src/imgui/imgui.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_demo.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_demo.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_demo.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_demo.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/imgui/imgui_demo.cpp",
   "output": "CMakeFiles/engine.dir/src/imgui/imgui_demo.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_draw.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_draw.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_draw.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_draw.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/imgui/imgui_draw.cpp",
   "output": "CMakeFiles/engine.dir/src/imgui/imgui_draw.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_impl_glfw.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_impl_glfw.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_impl_glfw.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_impl_glfw.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/imgui/imgui_impl_glfw.cpp",
   "output": "CMakeFiles/engine.dir/src/imgui/imgui_impl_glfw.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_impl_opengl3.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_impl_opengl3.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_impl_opengl3.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_impl_opengl3.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/imgui/imgui_impl_opengl3.cpp",
   "output": "CMakeFiles/engine.dir/src/imgui/imgui_impl_opengl3.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_tables.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_tables.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_tables.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_tables.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/imgui/imgui_tables.cpp",
   "output": "CMakeFiles/engine.dir/src/imgui/imgui_tables.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_widgets.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_widgets.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/imgui/imgui_widgets.cpp.o -c /home/abux/Projects/c++/hengine/src/imgui/imgui_widgets.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/imgui/imgui_widgets.cpp",
   "output": "CMakeFiles/engine.dir/src/imgui/imgui_widgets.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/main.cpp.o -c /home/abux/Projects/c++/hengine/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/main.cpp.o -c /home/abux/Projects/c++/hengine/src/main.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/main.cpp",
   "output": "CMakeFiles/engine.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/shader.cpp.o -c /home/abux/Projects/c++/hengine/src/shader.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/shader.cpp.o -c /home/abux/Projects/c++/hengine/src/shader.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/shader.cpp",
   "output": "CMakeFiles/engine.dir/src/shader.cpp.o"
 },
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
-  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/stb_image.cpp.o -c /home/abux/Projects/c++/hengine/src/stb_image.cpp",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/stb_image.cpp.o -c /home/abux/Projects/c++/hengine/src/stb_image.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/stb_image.cpp",
   "output": "CMakeFiles/engine.dir/src/stb_image.cpp.o"
 }
