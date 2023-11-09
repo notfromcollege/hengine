@@ -1,8 +1,8 @@
 TODO:
-  Load some 3D objects (weapons, swords, etc)
   Create particles
 
 DOING:
+  Load some 3D objects (weapons, swords, etc)
   Create more gameobjects (Plane, Light sources, etc)
 
 DONE:
@@ -13,6 +13,7 @@ DONE:
 
 
 TOFIX:
+  Lighting
 
 FIXING:
 

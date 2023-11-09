@@ -329,6 +329,7 @@ CMakeFiles/engine.dir/src/gameObjects/cubeObject.cpp.o: \
  /usr/include/glm/ext/vector_uint1_sized.hpp \
  /usr/include/c++/13.2.1/cstring /usr/include/string.h \
  /usr/include/strings.h /usr/include/glm/gtc/type_ptr.inl \
+ /home/abux/Projects/c++/hengine/include/gameObject.h \
  /home/abux/Projects/c++/hengine/include/shader.h \
  /usr/include/c++/13.2.1/fstream /usr/include/c++/13.2.1/bits/codecvt.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \

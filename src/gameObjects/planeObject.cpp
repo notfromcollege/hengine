@@ -1,9 +1,8 @@
-#include <cubeObject.h>
+#include <planeObject.h>
 
-CubeObject::CubeObject(glm::vec3 pos, ObjectShader objectShader) : pos(pos), objectShader(objectShader) {
+PlaneObject::PlaneObject(glm::vec3 pos, ObjectShader objectShader) : pos(pos), objectShader(objectShader) {
   if (objectShader == COLOR) { shader = new Shader("shaders/color_shader.vs", "shaders/color_shader.fs"); }
   else if (objectShader == TEXTURED) { shader = new Shader("shaders/shader.vs", "shaders/shader.fs"); }
-  else if (objectShader == LIGHTING) { shader = new Shader("shaders/light_shader.vs", "shaders/light_shader.fs"); }
 
   glGenVertexArrays(1, &VAO);
   glGenBuffers(1, &VBO);
@@ -24,30 +23,25 @@ CubeObject::CubeObject(glm::vec3 pos, ObjectShader objectShader) : pos(pos), obj
   }
   
   // Set up position attribute
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
-  // normal attribute
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-  glEnableVertexAttribArray(1);
 
   if (objectShader == TEXTURED) {
     // Set up texture attribute
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
   }
 }
 
-void CubeObject::render(glm::mat4 projection, glm::mat4 view) {
+void PlaneObject::render(glm::mat4 projection, glm::mat4 view) {
   // Use shader
   shader->use();
   // Set uniforms
   shader->setMat4("projection", projection);
   shader->setMat4("view", view);
-
   if (objectShader == COLOR) {
-    shader->setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+    shader->setVec3("objectColor", 1.0f, 1.0f, 1.0f);
     shader->setVec3("lightColor",  1.0f, 1.0f, 1.0f);
-    shader->setVec3("lightPos", pos);
   }
   else if (objectShader == TEXTURED) {
     if (texture1) { glActiveTexture(GL_TEXTURE0); glBindTexture(GL_TEXTURE_2D, texture1); }
@@ -60,10 +54,10 @@ void CubeObject::render(glm::mat4 projection, glm::mat4 view) {
   // GameObject position
   model = glm::translate(model, pos);
   shader->setMat4("model", model);
-  glDrawArrays(GL_TRIANGLES, 0, 288);
+  glDrawArrays(GL_TRIANGLES, 0, verticesSize);
 }
 
-void CubeObject::clean() {
+void PlaneObject::clean() {
   glDeleteVertexArrays(1, &VAO);
   glDeleteBuffers(1, &VBO);
 }

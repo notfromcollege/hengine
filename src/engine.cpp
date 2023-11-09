@@ -1,7 +1,10 @@
+#include "imgui.h"
 #include <engine.h>
 
 Skybox* skybox = nullptr;
 CubeObject* cube = nullptr;
+CubeObject* light = nullptr;
+PlaneObject* plane = nullptr;
 
 int screen_width, screen_height;
 float background[] = { 0.912f, 0.912f, 0.912f, 1.0f };
@@ -95,14 +98,14 @@ Engine::Engine(int swidth, int sheight) {
   skybox = new Skybox(skyboxFaces);
 
   camera = new Camera(glm::vec3(0.0f, 1.5f, 3.0f));
-  lightPos = glm::vec3(2.0f, 4.0f, 2.0f);
-
-  texture1 = new_texture("assets/images/wall.jpg", GL_RGB);
-  texture2 = new_texture("assets/images/awesomeface.png", GL_RGBA);
+  lightPos = glm::vec3(12.0f, 4.0f, 12.0f);
 
   // GameObjects
-  cube = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), TEXTURED);
-  cube->setTexture(texture1, texture2);
+  cube = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), CubeObject::TEXTURED);
+  cube->setTexture(new_texture("assets/images/crate.jpg", GL_RGB), new_texture("assets/images/crate.jpg", GL_RGB));
+  light = new CubeObject(lightPos, CubeObject::LIGHTING);
+  plane = new PlaneObject(glm::vec3(0.0f, 0.0f, 0.0f), PlaneObject::TEXTURED);
+  plane->setTexture(new_texture("assets/images/wall.jpg", GL_RGB), new_texture("assets/images/wall.jpg", GL_RGB));
 }
 
 void Engine::update() {
@@ -149,15 +152,28 @@ void Engine::render() {
   ImGui::InputFloat3("Light pos", &lightPos[0]);
   ImGui::End();
 
+  ImGui::Begin("World-GameObjects");
+  ImGui::TextColored(ImVec4(1,1,0,1), "GameObjects");
+  ImGui::BeginChild("GameObjects");
+  int cx = cube->getPos()[0];
+  int cy = cube->getPos()[1];
+  int cz = cube->getPos()[2];
+  ImGui::Text("Cube pos: x: %d y: %d z: %d", cx, cy, cz);
+  ImGui::EndChild();
+  ImGui::End();
+
   // Rendering functions here
   glClearColor(background[0], background[1], background[2], background[3]);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+  light->render(projection, view);
+  light->setPos(lightPos);
+
   for (unsigned int x = 0; x < cubex; x++) {
-    for (unsigned int y = 0; y < 2; y++) {
-      for (unsigned int z = 0; z < cubex; z++) {
-        if (x == 0 || x == cubex - 1 || z == 0 || z == cubex - 1) { cube->render(projection, view); cube->setPos(glm::vec3(x, y, z)); }
-      }
+    for (unsigned int z = 0; z < cubex; z++) {
+      plane->render(projection, view);
+      plane->setPos(glm::vec3(x, -1, z));
+      if (x == 0 || x == cubex - 1 || z == 0 || z == cubex - 1) { cube->render(projection, view); cube->setPos(glm::vec3(x, 0, z)); }
     }
   }
 
@@ -175,8 +191,8 @@ int Engine::new_texture(const char *path_to_texture, GLenum format) {
   glGenTextures(1, &texture);
   glBindTexture(GL_TEXTURE_2D, texture);
   // set the texture wrapping parameters
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); // set texture wrapping to GL_REPEAT (default wrapping method)
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER); // set texture wrapping to GL_REPEAT (default wrapping method)
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
   // set texture filtering parameters
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

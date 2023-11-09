@@ -19,6 +19,7 @@
 #include <skybox.h>
 #include <camera.h>
 #include <cubeObject.h>
+#include <planeObject.h>
 
 class Engine {
 public:

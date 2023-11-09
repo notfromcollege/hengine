@@ -1,6 +1,7 @@
-CMakeFiles/engine.dir/src/main.cpp.o: \
- /home/abux/Projects/c++/hengine/src/main.cpp /usr/include/stdc-predef.h \
- /home/abux/Projects/c++/hengine/include/engine.h \
+CMakeFiles/engine.dir/src/gameObjects/planeObject.cpp.o: \
+ /home/abux/Projects/c++/hengine/src/gameObjects/planeObject.cpp \
+ /usr/include/stdc-predef.h \
+ /home/abux/Projects/c++/hengine/include/gameObjects/planeObject.h \
  /home/abux/Projects/c++/hengine/include/glad/glad.h \
  /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
@@ -140,11 +141,7 @@ CMakeFiles/engine.dir/src/main.cpp.o: \
  /usr/include/c++/13.2.1/bits/locale_facets.tcc \
  /usr/include/c++/13.2.1/bits/basic_ios.tcc \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
- /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/c++/13.2.1/vector \
- /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/13.2.1/bits/stl_vector.h \
- /usr/include/c++/13.2.1/bits/stl_bvector.h \
- /usr/include/c++/13.2.1/bits/vector.tcc /usr/include/glm/glm.hpp \
+ /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/c++/13.2.1/cmath \
  /usr/include/math.h /usr/include/bits/math-vector.h \
  /usr/include/bits/libm-simd-decl-stubs.h \
@@ -332,20 +329,9 @@ CMakeFiles/engine.dir/src/main.cpp.o: \
  /usr/include/glm/ext/vector_uint1_sized.hpp \
  /usr/include/c++/13.2.1/cstring /usr/include/string.h \
  /usr/include/strings.h /usr/include/glm/gtc/type_ptr.inl \
- /home/abux/Projects/c++/hengine/include/imgui/imgui.h \
- /home/abux/Projects/c++/hengine/include/imgui/imconfig.h \
- /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h \
- /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
  /home/abux/Projects/c++/hengine/include/shader.h \
  /usr/include/c++/13.2.1/fstream /usr/include/c++/13.2.1/bits/codecvt.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/13.2.1/bits/fstream.tcc /usr/include/c++/13.2.1/sstream \
- /usr/include/c++/13.2.1/bits/sstream.tcc \
- /home/abux/Projects/c++/hengine/include/stb_image.h \
- /usr/include/c++/13.2.1/stdlib.h \
- /home/abux/Projects/c++/hengine/include/skybox.h \
- /home/abux/Projects/c++/hengine/include/camera.h \
- /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h \
- /home/abux/Projects/c++/hengine/include/gameObject.h \
- /home/abux/Projects/c++/hengine/include/gameObjects/planeObject.h
+ /usr/include/c++/13.2.1/bits/sstream.tcc
