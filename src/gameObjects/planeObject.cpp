@@ -46,6 +46,7 @@ void PlaneObject::render(glm::mat4 projection, glm::mat4 view) {
   else if (objectShader == TEXTURED) {
     if (texture1) { glActiveTexture(GL_TEXTURE0); glBindTexture(GL_TEXTURE_2D, texture1); }
     if (texture2) { glActiveTexture(GL_TEXTURE1); glBindTexture(GL_TEXTURE_2D, texture2); }
+    shader->setVec3("lightColor",  1.0f, 1.0f, 1.0f);
   }
 
   // Render

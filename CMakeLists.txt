@@ -13,7 +13,7 @@ add_executable(engine ${SOURCES})
 target_include_directories(engine PRIVATE "include" "include/imgui" "include/gameObjects" "libs/glm")
 
 # Link libraries
-target_link_libraries(engine PRIVATE imgui glfw GL X11 pthread Xrandr Xi dl)
+target_link_libraries(engine PRIVATE imgui glfw assimp GL X11 pthread Xrandr Xi dl)
 
 # Copy shaders to build directory
 file(COPY shaders DESTINATION ${CMAKE_BINARY_DIR})

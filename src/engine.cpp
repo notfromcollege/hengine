@@ -1,10 +1,6 @@
-#include "imgui.h"
 #include <engine.h>
 
 Skybox* skybox = nullptr;
-CubeObject* cube = nullptr;
-CubeObject* light = nullptr;
-PlaneObject* plane = nullptr;
 
 int screen_width, screen_height;
 float background[] = { 0.912f, 0.912f, 0.912f, 1.0f };
@@ -79,6 +75,9 @@ Engine::Engine(int swidth, int sheight) {
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
   ImGuiIO &io = ImGui::GetIO();(void)io;
+  ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+  ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 4.0f);
+  ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
 
   // Imgui style
   ImGui::StyleColorsDark();
@@ -99,13 +98,6 @@ Engine::Engine(int swidth, int sheight) {
 
   camera = new Camera(glm::vec3(0.0f, 1.5f, 3.0f));
   lightPos = glm::vec3(12.0f, 4.0f, 12.0f);
-
-  // GameObjects
-  cube = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), CubeObject::TEXTURED);
-  cube->setTexture(new_texture("assets/images/crate.jpg", GL_RGB), new_texture("assets/images/crate.jpg", GL_RGB));
-  light = new CubeObject(lightPos, CubeObject::LIGHTING);
-  plane = new PlaneObject(glm::vec3(0.0f, 0.0f, 0.0f), PlaneObject::TEXTURED);
-  plane->setTexture(new_texture("assets/images/wall.jpg", GL_RGB), new_texture("assets/images/wall.jpg", GL_RGB));
 }
 
 void Engine::update() {
@@ -153,12 +145,23 @@ void Engine::render() {
   ImGui::End();
 
   ImGui::Begin("World-GameObjects");
-  ImGui::TextColored(ImVec4(1,1,0,1), "GameObjects");
   ImGui::BeginChild("GameObjects");
-  int cx = cube->getPos()[0];
-  int cy = cube->getPos()[1];
-  int cz = cube->getPos()[2];
-  ImGui::Text("Cube pos: x: %d y: %d z: %d", cx, cy, cz);
+  ImGui::TextColored(ImVec4(1,1,0,1), "GameObjects");
+  if (ImGui::Button("Add gameobject")) {
+    CubeObject* n_cb = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), GameObject::TEXTURED);
+    n_cb->setTexture(new_texture("assets/images/wall.jpg", GL_RGB), new_texture("assets/images/awesomeface.png", GL_RGBA));
+    gameobjects.push_back(n_cb);
+  }
+
+  for (size_t i = 0; i < gameobjects.size(); ++i) {
+    ImGui::Text("Position: ");
+    ImGui::SameLine();
+    glm::vec3 pos = gameobjects[i]->getPos();
+    char id[32];
+    snprintf(id, sizeof(id), "###Position%d", i);
+    if (ImGui::InputFloat3(id, glm::value_ptr(pos))) { gameobjects[i]->setPos(pos); }
+  }
+
   ImGui::EndChild();
   ImGui::End();
 
@@ -166,15 +169,8 @@ void Engine::render() {
   glClearColor(background[0], background[1], background[2], background[3]);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  light->render(projection, view);
-  light->setPos(lightPos);
-
-  for (unsigned int x = 0; x < cubex; x++) {
-    for (unsigned int z = 0; z < cubex; z++) {
-      plane->render(projection, view);
-      plane->setPos(glm::vec3(x, -1, z));
-      if (x == 0 || x == cubex - 1 || z == 0 || z == cubex - 1) { cube->render(projection, view); cube->setPos(glm::vec3(x, 0, z)); }
-    }
+  for (CubeObject* obj : gameobjects) {
+    obj->render(camera, projection, view);
   }
 
   skybox->render(camera, projection, view);
@@ -220,7 +216,9 @@ void Engine::clean() {
   glDeleteVertexArrays(1, &VAO);
   glDeleteVertexArrays(1, &lightVAO);
   glDeleteBuffers(1, &VBO);
-  cube->clean();
+  for (CubeObject* obj : gameobjects) {
+    obj->clean();
+  }
   skybox->clean();
 
   glfwTerminate();

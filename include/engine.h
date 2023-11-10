@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <filesystem>
 #include <vector>
 
 #include <glm/glm.hpp>
@@ -11,6 +12,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <imgui.h>
+#include <imgui_internal.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 
@@ -44,8 +46,9 @@ private:
 
   // Map
   unsigned int skyboxTex;
-  int cubex = 6;
+  int cubex = 7;
   float cubesize = 1.0f;
+  std::vector<CubeObject*> gameobjects;
 
   // Lighting
   glm::vec3 lightPos;
