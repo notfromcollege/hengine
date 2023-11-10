@@ -26,15 +26,18 @@ public:
   void render(Camera* camera, glm::mat4 projection, glm::mat4 view);
 
   void setPos(glm::vec3 pos) { this->pos = pos; }
-  glm::vec3 getPos() { return pos; }
-  float getPosF() { return pos[0], pos[1], pos[2]; }
+  glm::vec3 getPos()  { return pos; }
   void setSize(glm::vec3 size) { this->size = size; }
+  glm::vec3 getSize() { return size; }
+  void setName(std::string objectName) { this->objectName = objectName; }
+  std::string getName() const { return objectName; }
   void setTexture(unsigned int texture1, unsigned int texture2) { this->texture1 = texture1; this->texture2 = texture2; }
 
   Shader* shader;
   ObjectShader objectShader;
   unsigned int VAO, VBO;
   unsigned int texture1, texture2;
+  std::string objectName;
   glm::vec3 pos;
   glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f);
 

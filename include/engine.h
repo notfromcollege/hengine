@@ -49,6 +49,8 @@ private:
   int cubex = 7;
   float cubesize = 1.0f;
   std::vector<CubeObject*> gameobjects;
+  bool showObjectNameInput = false;
+  int objectSelected = -1;
 
   // Lighting
   glm::vec3 lightPos;

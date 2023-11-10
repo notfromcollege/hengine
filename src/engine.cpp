@@ -133,47 +133,72 @@ void Engine::render() {
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
+  
+  ImGui::DockSpaceOverViewport(ImGui::GetMainViewport(), ImGuiDockNodeFlags_PassthruCentralNode);
 
   ImGui::Begin("World");
   ImGui::Checkbox("Wireframe mode", &wireframeMode);
   ImGui::SliderFloat("FOV", &camera->Fov, 45.0f, 120.0f);
+  ImGui::InputFloat("Speed", &camera->MovementSpeed);
   ImGui::ColorEdit4("Background", background);
-  ImGui::Text("Map");
-  ImGui::SliderInt("CubexLen", &cubex, 1, 100);
-  ImGui::SliderFloat("Objects size", &cubesize, 1.0f, 10.0f);
   ImGui::InputFloat3("Light pos", &lightPos[0]);
   ImGui::End();
 
   ImGui::Begin("World-GameObjects");
   ImGui::BeginChild("GameObjects");
   ImGui::TextColored(ImVec4(1,1,0,1), "GameObjects");
+
   if (ImGui::Button("Add gameobject")) {
     CubeObject* n_cb = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), GameObject::TEXTURED);
     n_cb->setTexture(new_texture("assets/images/wall.jpg", GL_RGB), new_texture("assets/images/awesomeface.png", GL_RGBA));
     gameobjects.push_back(n_cb);
   }
 
-  for (size_t i = 0; i < gameobjects.size(); ++i) {
-    ImGui::Text("Position: ");
+  for (int i = 0; i < gameobjects.size(); ++i) {
+    ImGui::TextColored(ImVec4(0, 1, 1, 1), "ID: %i", i);
     ImGui::SameLine();
-    glm::vec3 pos = gameobjects[i]->getPos();
-    char id[32];
-    snprintf(id, sizeof(id), "###Position%d", i);
-    if (ImGui::InputFloat3(id, glm::value_ptr(pos))) { gameobjects[i]->setPos(pos); }
+
+    char selectButtonLabel[32];
+    snprintf(selectButtonLabel, sizeof(selectButtonLabel), "Select##%d", i);
+
+    if (ImGui::Button(selectButtonLabel)) { objectSelected = i; }
   }
 
   ImGui::EndChild();
+  ImGui::End();
+
+  ImGui::Begin("Inspect");
+  if (objectSelected != -1) {
+    ImGui::TextColored(ImVec4(0, 1, 1, 1), "Selected Object ID: %i", objectSelected);
+    ImGui::Text("Position: ");
+    ImGui::SameLine();
+    glm::vec3 pos = gameobjects[objectSelected]->getPos();
+    char pos_id[32];
+    snprintf(pos_id, sizeof(pos_id), "###Position%d", objectSelected);
+    if (ImGui::InputFloat3(pos_id, glm::value_ptr(pos))) {
+        gameobjects[objectSelected]->setPos(pos);
+    }
+
+    ImGui::Text("Size: ");
+    ImGui::SameLine();
+    glm::vec3 size = gameobjects[objectSelected]->getSize();
+    char size_id[32];
+    snprintf(size_id, sizeof(size_id), "###Size%d", objectSelected);
+    if (ImGui::InputFloat3(size_id, glm::value_ptr(size))) { gameobjects[objectSelected]->setSize(size); }
+  }
+  ImGui::End();
+
+  ImGui::Begin("Console");
+
   ImGui::End();
 
   // Rendering functions here
   glClearColor(background[0], background[1], background[2], background[3]);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  for (CubeObject* obj : gameobjects) {
-    obj->render(camera, projection, view);
-  }
-
+  for (CubeObject* obj : gameobjects) { obj->render(camera, projection, view); }
   skybox->render(camera, projection, view);
+
 
   // Check all events and swap buffers
   ImGui::Render();

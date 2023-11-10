@@ -39,3 +39,6 @@ nvim
 cd Projects/c++/hengine
 nvim
 vim
+cd Projects/c++/
+cd hengine
+vim
