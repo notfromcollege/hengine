@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/engine.dir/src/UI.cpp.o"
+  "CMakeFiles/engine.dir/src/UI.cpp.o.d"
   "CMakeFiles/engine.dir/src/camera.cpp.o"
   "CMakeFiles/engine.dir/src/camera.cpp.o.d"
   "CMakeFiles/engine.dir/src/engine.cpp.o"
@@ -31,6 +33,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/src/shader.cpp.o.d"
   "CMakeFiles/engine.dir/src/stb_image.cpp.o"
   "CMakeFiles/engine.dir/src/stb_image.cpp.o.d"
+  "CMakeFiles/engine.dir/src/textureManager.cpp.o"
+  "CMakeFiles/engine.dir/src/textureManager.cpp.o.d"
   "engine"
   "engine.pdb"
 )

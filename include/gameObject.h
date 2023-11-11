@@ -23,7 +23,7 @@ public:
   void clean();
 
   void update();
-  void render(Camera* camera, glm::mat4 projection, glm::mat4 view);
+  void render(Camera* camera, glm::vec3 lightPos, glm::mat4 projection, glm::mat4 view);
 
   void setPos(glm::vec3 pos) { this->pos = pos; }
   glm::vec3 getPos()  { return pos; }
@@ -35,10 +35,12 @@ public:
 
   Shader* shader;
   ObjectShader objectShader;
+  glm::vec3 objectColor = glm::vec3(0.4f, 0.4f, 0.4f);
   unsigned int VAO, VBO;
   unsigned int texture1, texture2;
   std::string objectName;
   glm::vec3 pos;
+  glm::vec3 rot = glm::vec3(0.0f, 0.0f, 0.0f);
   glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f);
 
   float vertices[288] = {

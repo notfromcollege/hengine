@@ -129,6 +129,30 @@ engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
 .PHONY : engine/fast
 
+src/UI.o: src/UI.cpp.o
+.PHONY : src/UI.o
+
+# target to build an object file
+src/UI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/UI.cpp.o
+.PHONY : src/UI.cpp.o
+
+src/UI.i: src/UI.cpp.i
+.PHONY : src/UI.i
+
+# target to preprocess a source file
+src/UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/UI.cpp.i
+.PHONY : src/UI.cpp.i
+
+src/UI.s: src/UI.cpp.s
+.PHONY : src/UI.s
+
+# target to generate assembly for a file
+src/UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/UI.cpp.s
+.PHONY : src/UI.cpp.s
+
 src/camera.o: src/camera.cpp.o
 .PHONY : src/camera.o
 
@@ -513,6 +537,30 @@ src/stb_image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/stb_image.cpp.s
 .PHONY : src/stb_image.cpp.s
 
+src/textureManager.o: src/textureManager.cpp.o
+.PHONY : src/textureManager.o
+
+# target to build an object file
+src/textureManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/textureManager.cpp.o
+.PHONY : src/textureManager.cpp.o
+
+src/textureManager.i: src/textureManager.cpp.i
+.PHONY : src/textureManager.i
+
+# target to preprocess a source file
+src/textureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/textureManager.cpp.i
+.PHONY : src/textureManager.cpp.i
+
+src/textureManager.s: src/textureManager.cpp.s
+.PHONY : src/textureManager.s
+
+# target to generate assembly for a file
+src/textureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/textureManager.cpp.s
+.PHONY : src/textureManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -522,6 +570,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... engine"
+	@echo "... src/UI.o"
+	@echo "... src/UI.i"
+	@echo "... src/UI.s"
 	@echo "... src/camera.o"
 	@echo "... src/camera.i"
 	@echo "... src/camera.s"
@@ -570,6 +621,9 @@ help:
 	@echo "... src/stb_image.o"
 	@echo "... src/stb_image.i"
 	@echo "... src/stb_image.s"
+	@echo "... src/textureManager.o"
+	@echo "... src/textureManager.i"
+	@echo "... src/textureManager.s"
 .PHONY : help
 
 

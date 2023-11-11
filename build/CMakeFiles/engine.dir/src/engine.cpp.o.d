@@ -458,14 +458,17 @@ CMakeFiles/engine.dir/src/engine.cpp.o: \
  /home/abux/Projects/c++/hengine/include/imgui/imstb_textedit.h \
  /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h \
  /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
+ /home/abux/Projects/c++/hengine/include/UI.h \
+ /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h \
+ /home/abux/Projects/c++/hengine/include/gameObject.h \
  /home/abux/Projects/c++/hengine/include/shader.h \
  /usr/include/c++/13.2.1/fstream \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/13.2.1/bits/fstream.tcc \
- /home/abux/Projects/c++/hengine/include/stb_image.h \
- /home/abux/Projects/c++/hengine/include/skybox.h \
  /home/abux/Projects/c++/hengine/include/camera.h \
- /home/abux/Projects/c++/hengine/include/gameObjects/cubeObject.h \
- /home/abux/Projects/c++/hengine/include/gameObject.h \
+ /home/abux/Projects/c++/hengine/include/textureManager.h \
+ /home/abux/Projects/c++/hengine/include/stb_image.h \
+ /home/abux/Projects/c++/hengine/include/sceneManager.h \
+ /home/abux/Projects/c++/hengine/include/skybox.h \
  /home/abux/Projects/c++/hengine/include/gameObjects/planeObject.h

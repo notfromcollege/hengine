@@ -34,10 +34,13 @@ GameObject::GameObject(glm::vec3 pos, ObjectShader objectShader) : pos(pos), obj
     // Set up texture attribute
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     glEnableVertexAttribArray(1);
+    // normal attribute
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(2);
   }
 }
 
-void GameObject::render(Camera* camera, glm::mat4 projection, glm::mat4 view) {
+void GameObject::render(Camera* camera, glm::vec3 lightPos, glm::mat4 projection, glm::mat4 view) {
   // Use shader
   shader->use();
   // Set uniforms
@@ -45,13 +48,17 @@ void GameObject::render(Camera* camera, glm::mat4 projection, glm::mat4 view) {
   shader->setMat4("view", view);
 
   if (objectShader == COLOR) {
-    shader->setVec3("lightColor",  1.0f, 0.2f, 0.2f);
+    shader->setVec3("objectColor", objectColor);
+    shader->setVec3("lightColor",  1.0f, 1.0f, 1.0f);
+    shader->setVec3("lightPos", lightPos);
     shader->setVec3("camPos", camera->getPos());
   }
   else if (objectShader == TEXTURED) {
     if (texture1) { glActiveTexture(GL_TEXTURE0); glBindTexture(GL_TEXTURE_2D, texture1); }
     if (texture2) { glActiveTexture(GL_TEXTURE1); glBindTexture(GL_TEXTURE_2D, texture2); }
-    shader->setVec3("lightColor",  1.0f, 0.2f, 0.2f);
+    shader->setVec3("lightColor",  1.0f, 1.0f, 1.0f);
+    shader->setVec3("lightPos", lightPos);
+    shader->setVec3("camPos", camera->getPos());
   }
   else if (objectShader == LIGHTING) {
     shader->setVec3("lightColor",  1.0f, 0.2f, 0.2f);
@@ -63,6 +70,7 @@ void GameObject::render(Camera* camera, glm::mat4 projection, glm::mat4 view) {
   // GameObject position
   model = glm::translate(model, pos);
   model = glm::scale(model, size);
+  if (rot[0] != 0 || rot[1] != 0 || rot[2] != 0) model = glm::rotate(model, 1.0f, rot);
   shader->setMat4("model", model);
   glDrawArrays(GL_TRIANGLES, 0, 288);
 }

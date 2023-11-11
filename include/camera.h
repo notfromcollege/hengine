@@ -47,6 +47,7 @@ public:
   float Pitch;
   // camera options
   float MovementSpeed;
+  bool MoveFly = false;
   bool Sprinting = false;
   float MouseSensitivity;
   float Fov;

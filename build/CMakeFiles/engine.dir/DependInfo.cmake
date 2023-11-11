@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/abux/Projects/c++/hengine/src/glad.c" "CMakeFiles/engine.dir/src/glad.c.o" "gcc" "CMakeFiles/engine.dir/src/glad.c.o.d"
+  "/home/abux/Projects/c++/hengine/src/UI.cpp" "CMakeFiles/engine.dir/src/UI.cpp.o" "gcc" "CMakeFiles/engine.dir/src/UI.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/camera.cpp" "CMakeFiles/engine.dir/src/camera.cpp.o" "gcc" "CMakeFiles/engine.dir/src/camera.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/engine.cpp" "CMakeFiles/engine.dir/src/engine.cpp.o" "gcc" "CMakeFiles/engine.dir/src/engine.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/gameObject.cpp" "CMakeFiles/engine.dir/src/gameObject.cpp.o" "gcc" "CMakeFiles/engine.dir/src/gameObject.cpp.o.d"
@@ -24,6 +25,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/abux/Projects/c++/hengine/src/main.cpp" "CMakeFiles/engine.dir/src/main.cpp.o" "gcc" "CMakeFiles/engine.dir/src/main.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/shader.cpp" "CMakeFiles/engine.dir/src/shader.cpp.o" "gcc" "CMakeFiles/engine.dir/src/shader.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/stb_image.cpp" "CMakeFiles/engine.dir/src/stb_image.cpp.o" "gcc" "CMakeFiles/engine.dir/src/stb_image.cpp.o.d"
+  "/home/abux/Projects/c++/hengine/src/textureManager.cpp" "CMakeFiles/engine.dir/src/textureManager.cpp.o" "gcc" "CMakeFiles/engine.dir/src/textureManager.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

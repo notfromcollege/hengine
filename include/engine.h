@@ -15,9 +15,12 @@
 #include <imgui_internal.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
+#include <UI.h>
 
 #include <shader.h>
 #include <stb_image.h>
+#include <sceneManager.h>
+#include <textureManager.h>
 #include <skybox.h>
 #include <camera.h>
 #include <cubeObject.h>
@@ -33,8 +36,6 @@ public:
   void inputs(GLFWwindow* window);
   void render();
 
-  int new_texture(const char* path_to_texture, GLenum format);
-
   void clean();
 
   GLFWwindow* window;
@@ -45,12 +46,12 @@ private:
   unsigned int planeVAO, planeVBO;
 
   // Map
+  UI* ui = nullptr;
   unsigned int skyboxTex;
-  int cubex = 7;
-  float cubesize = 1.0f;
   std::vector<CubeObject*> gameobjects;
   bool showObjectNameInput = false;
   int objectSelected = -1;
+  bool skyboxEnabled = true;
 
   // Lighting
   glm::vec3 lightPos;

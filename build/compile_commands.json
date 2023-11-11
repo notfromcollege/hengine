@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/abux/Projects/c++/hengine/build",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/UI.cpp.o -c /home/abux/Projects/c++/hengine/src/UI.cpp",
+  "file": "/home/abux/Projects/c++/hengine/src/UI.cpp",
+  "output": "CMakeFiles/engine.dir/src/UI.cpp.o"
+},
+{
+  "directory": "/home/abux/Projects/c++/hengine/build",
   "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/camera.cpp.o -c /home/abux/Projects/c++/hengine/src/camera.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/camera.cpp",
   "output": "CMakeFiles/engine.dir/src/camera.cpp.o"
@@ -94,5 +100,11 @@
   "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/stb_image.cpp.o -c /home/abux/Projects/c++/hengine/src/stb_image.cpp",
   "file": "/home/abux/Projects/c++/hengine/src/stb_image.cpp",
   "output": "CMakeFiles/engine.dir/src/stb_image.cpp.o"
+},
+{
+  "directory": "/home/abux/Projects/c++/hengine/build",
+  "command": "/usr/bin/c++  -I/home/abux/Projects/c++/hengine/include -I/home/abux/Projects/c++/hengine/include/imgui -I/home/abux/Projects/c++/hengine/include/gameObjects -I/home/abux/Projects/c++/hengine/libs/glm -g -o CMakeFiles/engine.dir/src/textureManager.cpp.o -c /home/abux/Projects/c++/hengine/src/textureManager.cpp",
+  "file": "/home/abux/Projects/c++/hengine/src/textureManager.cpp",
+  "output": "CMakeFiles/engine.dir/src/textureManager.cpp.o"
 }
 ]

@@ -11,18 +11,26 @@ Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch)
 
 void Camera::ProcessKeyboard(Camera_Movement direction, float deltaTime) {
   float velocity = 0;
-    if (Sprinting) velocity = (MovementSpeed*2) * deltaTime; else velocity = MovementSpeed * deltaTime;
+  if (Sprinting) velocity = (MovementSpeed*2) * deltaTime; else velocity = MovementSpeed * deltaTime;
 
-    glm::vec3 localUp = glm::normalize(glm::vec3(0.0f, Up.y, 0.0f));
-    glm::vec3 localFront = glm::normalize(glm::vec3(Front.x, 0.0f, Front.z));
-    glm::vec3 localRight = glm::normalize(glm::cross(localFront, Up));
+  glm::vec3 localUp = glm::normalize(glm::vec3(0.0f, Up.y, 0.0f));
+  glm::vec3 localFront = glm::normalize(glm::vec3(Front.x, 0.0f, Front.z));
+  glm::vec3 localRight = glm::normalize(glm::cross(localFront, Up));
 
-    if (direction == UP) Position += localUp * velocity;
-    if (direction == DOWN) Position -= localUp * velocity;
-    if (direction == FORWARD) Position += localFront * velocity;
-    if (direction == BACKWARD) Position -= localFront * velocity;
-    if (direction == LEFT) Position -= localRight * velocity;
-    if (direction == RIGHT) Position += localRight * velocity;
+  if (direction == UP) Position += localUp * velocity;
+  if (direction == DOWN) Position -= localUp * velocity;
+
+  if (direction == FORWARD && !MoveFly) Position += localFront * velocity;
+  if (direction == FORWARD && MoveFly) Position += Front * velocity;
+
+  if (direction == BACKWARD && !MoveFly) Position -= localFront * velocity;
+  if (direction == BACKWARD && MoveFly) Position -= Front * velocity;
+
+  if (direction == LEFT && !MoveFly) Position -= localRight * velocity;
+  if (direction == LEFT && MoveFly) Position -= localRight * velocity;
+
+  if (direction == RIGHT && !MoveFly) Position += localRight * velocity;
+  if (direction == RIGHT && MoveFly) Position += Right * velocity;
 }
 
 void Camera::ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch) {
