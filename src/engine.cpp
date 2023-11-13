@@ -75,8 +75,8 @@ void Engine::update() {
 void Engine::inputs(GLFWwindow *window) {
   // Take window key inputs
   if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) { glfwSetWindowShouldClose(window, true); }
-  if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) { mouseLocked = true; showUI = false; }
-  if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) { mouseLocked = false; showUI = true; }
+  if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) { mouseLocked = false; showUI = true; }
+  if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) { mouseLocked = true; showUI = false; }
 
   if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) camera->ProcessKeyboard(FORWARD, deltaTime);
   if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera->ProcessKeyboard(BACKWARD, deltaTime);
