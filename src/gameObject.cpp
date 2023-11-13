@@ -64,6 +64,11 @@ void GameObject::render(Camera* camera, glm::vec3 lightPos, glm::mat4 projection
     shader->setVec3("lightColor",  1.0f, 0.2f, 0.2f);
   }
 
+  shader->setFloat("material.ambient",   material.x);
+  shader->setFloat("material.diffuse",   material.y);
+  shader->setFloat("material.specular",  material.z);
+  shader->setFloat("material.shininess", material.w);
+
   // Render
   glBindVertexArray(VAO);
   glm::mat4 model = glm::mat4(1.0f);

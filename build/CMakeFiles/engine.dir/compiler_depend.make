@@ -11,8 +11,7 @@ CMakeFiles/engine.dir/src/UI.cpp.o: /home/abux/Projects/c++/hengine/src/UI.cpp \
   /home/abux/Projects/c++/hengine/include/imgui/imgui.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
-  /home/abux/Projects/c++/hengine/include/imgui/imgui_internal.h \
-  /home/abux/Projects/c++/hengine/include/imgui/imstb_textedit.h \
+  /home/abux/Projects/c++/hengine/include/sceneManager.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
   /home/abux/Projects/c++/hengine/include/stb_image.h \
   /home/abux/Projects/c++/hengine/include/textureManager.h \
@@ -190,7 +189,6 @@ CMakeFiles/engine.dir/src/UI.cpp.o: /home/abux/Projects/c++/hengine/src/UI.cpp \
   /usr/include/c++/13.2.1/iostream \
   /usr/include/c++/13.2.1/istream \
   /usr/include/c++/13.2.1/limits \
-  /usr/include/c++/13.2.1/math.h \
   /usr/include/c++/13.2.1/new \
   /usr/include/c++/13.2.1/ostream \
   /usr/include/c++/13.2.1/pstl/pstl_config.h \
@@ -438,106 +436,12 @@ CMakeFiles/engine.dir/src/UI.cpp.o: /home/abux/Projects/c++/hengine/src/UI.cpp \
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/adxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxbf16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxcomplexintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxfp16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxint8intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxtileintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124fmapsintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124vnniwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bitalgintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512cdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512dqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512erintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmavlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512pfintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmivlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlbwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vldqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnnivlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectvlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqvlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxifmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxneconvertintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniint8intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmi2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cetintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cldemoteintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clflushoptintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clwbintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clzerointrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cmpccxaddintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/enqcmdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/f16cintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fxsrintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/gfniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/hresetintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/ia32intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/immintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/keylockerintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/limits.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lwpintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lzcntintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mm_malloc.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/movdirintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pconfigintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pkuintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/popcntintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/raointintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rdseedintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rtmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/serializeintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/sgxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/shaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/smmintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tbmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tsxldtrkintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/uintrintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vaesintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vpclmulqdqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/waitpkgintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wbnoinvdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/x86gprintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavecintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveoptintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavesintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h
+  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h
 
 CMakeFiles/engine.dir/src/camera.cpp.o: /home/abux/Projects/c++/hengine/src/camera.cpp \
   /home/abux/Projects/c++/hengine/include/camera.h \
@@ -844,8 +748,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /home/abux/Projects/c++/hengine/include/imgui/imgui.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
-  /home/abux/Projects/c++/hengine/include/imgui/imgui_internal.h \
-  /home/abux/Projects/c++/hengine/include/imgui/imstb_textedit.h \
   /home/abux/Projects/c++/hengine/include/sceneManager.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
   /home/abux/Projects/c++/hengine/include/skybox.h \
@@ -935,7 +837,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/backward/binders.h \
   /usr/include/c++/13.2.1/bit \
   /usr/include/c++/13.2.1/bits/alloc_traits.h \
-  /usr/include/c++/13.2.1/bits/allocated_ptr.h \
   /usr/include/c++/13.2.1/bits/allocator.h \
   /usr/include/c++/13.2.1/bits/basic_ios.h \
   /usr/include/c++/13.2.1/bits/basic_ios.tcc \
@@ -943,7 +844,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/bits/basic_string.tcc \
   /usr/include/c++/13.2.1/bits/char_traits.h \
   /usr/include/c++/13.2.1/bits/charconv.h \
-  /usr/include/c++/13.2.1/bits/chrono.h \
   /usr/include/c++/13.2.1/bits/codecvt.h \
   /usr/include/c++/13.2.1/bits/concept_check.h \
   /usr/include/c++/13.2.1/bits/cpp_type_traits.h \
@@ -952,10 +852,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/bits/exception.h \
   /usr/include/c++/13.2.1/bits/exception_defines.h \
   /usr/include/c++/13.2.1/bits/exception_ptr.h \
-  /usr/include/c++/13.2.1/bits/fs_dir.h \
-  /usr/include/c++/13.2.1/bits/fs_fwd.h \
-  /usr/include/c++/13.2.1/bits/fs_ops.h \
-  /usr/include/c++/13.2.1/bits/fs_path.h \
   /usr/include/c++/13.2.1/bits/fstream.tcc \
   /usr/include/c++/13.2.1/bits/functexcept.h \
   /usr/include/c++/13.2.1/bits/functional_hash.h \
@@ -965,11 +861,8 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/bits/istream.tcc \
   /usr/include/c++/13.2.1/bits/locale_classes.h \
   /usr/include/c++/13.2.1/bits/locale_classes.tcc \
-  /usr/include/c++/13.2.1/bits/locale_conv.h \
   /usr/include/c++/13.2.1/bits/locale_facets.h \
   /usr/include/c++/13.2.1/bits/locale_facets.tcc \
-  /usr/include/c++/13.2.1/bits/locale_facets_nonio.h \
-  /usr/include/c++/13.2.1/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13.2.1/bits/localefwd.h \
   /usr/include/c++/13.2.1/bits/memory_resource.h \
   /usr/include/c++/13.2.1/bits/memoryfwd.h \
@@ -978,16 +871,12 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/bits/new_allocator.h \
   /usr/include/c++/13.2.1/bits/ostream.tcc \
   /usr/include/c++/13.2.1/bits/ostream_insert.h \
-  /usr/include/c++/13.2.1/bits/parse_numbers.h \
   /usr/include/c++/13.2.1/bits/postypes.h \
   /usr/include/c++/13.2.1/bits/predefined_ops.h \
   /usr/include/c++/13.2.1/bits/ptr_traits.h \
-  /usr/include/c++/13.2.1/bits/quoted_string.h \
   /usr/include/c++/13.2.1/bits/range_access.h \
   /usr/include/c++/13.2.1/bits/refwrap.h \
   /usr/include/c++/13.2.1/bits/requires_hosted.h \
-  /usr/include/c++/13.2.1/bits/shared_ptr.h \
-  /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
   /usr/include/c++/13.2.1/bits/specfun.h \
   /usr/include/c++/13.2.1/bits/sstream.tcc \
   /usr/include/c++/13.2.1/bits/std_abs.h \
@@ -1005,7 +894,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/13.2.1/bits/string_view.tcc \
   /usr/include/c++/13.2.1/bits/stringfwd.h \
-  /usr/include/c++/13.2.1/bits/unique_ptr.h \
   /usr/include/c++/13.2.1/bits/uses_allocator.h \
   /usr/include/c++/13.2.1/bits/uses_allocator_args.h \
   /usr/include/c++/13.2.1/bits/utility.h \
@@ -1017,40 +905,31 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/climits \
   /usr/include/c++/13.2.1/clocale \
   /usr/include/c++/13.2.1/cmath \
-  /usr/include/c++/13.2.1/codecvt \
   /usr/include/c++/13.2.1/cstddef \
   /usr/include/c++/13.2.1/cstdint \
   /usr/include/c++/13.2.1/cstdio \
   /usr/include/c++/13.2.1/cstdlib \
   /usr/include/c++/13.2.1/cstring \
-  /usr/include/c++/13.2.1/ctime \
   /usr/include/c++/13.2.1/cwchar \
   /usr/include/c++/13.2.1/cwctype \
   /usr/include/c++/13.2.1/debug/assertions.h \
   /usr/include/c++/13.2.1/debug/debug.h \
   /usr/include/c++/13.2.1/exception \
-  /usr/include/c++/13.2.1/ext/aligned_buffer.h \
   /usr/include/c++/13.2.1/ext/alloc_traits.h \
   /usr/include/c++/13.2.1/ext/atomicity.h \
-  /usr/include/c++/13.2.1/ext/concurrence.h \
   /usr/include/c++/13.2.1/ext/numeric_traits.h \
   /usr/include/c++/13.2.1/ext/string_conversions.h \
   /usr/include/c++/13.2.1/ext/type_traits.h \
-  /usr/include/c++/13.2.1/filesystem \
   /usr/include/c++/13.2.1/fstream \
   /usr/include/c++/13.2.1/initializer_list \
-  /usr/include/c++/13.2.1/iomanip \
   /usr/include/c++/13.2.1/ios \
   /usr/include/c++/13.2.1/iosfwd \
   /usr/include/c++/13.2.1/iostream \
   /usr/include/c++/13.2.1/istream \
   /usr/include/c++/13.2.1/limits \
-  /usr/include/c++/13.2.1/locale \
-  /usr/include/c++/13.2.1/math.h \
   /usr/include/c++/13.2.1/new \
   /usr/include/c++/13.2.1/ostream \
   /usr/include/c++/13.2.1/pstl/pstl_config.h \
-  /usr/include/c++/13.2.1/ratio \
   /usr/include/c++/13.2.1/sstream \
   /usr/include/c++/13.2.1/stdexcept \
   /usr/include/c++/13.2.1/stdlib.h \
@@ -1086,9 +965,7 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
-  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
-  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -1277,7 +1154,6 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/glm/vector_relational.hpp \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
-  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
@@ -1298,106 +1174,12 @@ CMakeFiles/engine.dir/src/engine.cpp.o: /home/abux/Projects/c++/hengine/src/engi
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/adxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxbf16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxcomplexintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxfp16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxint8intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxtileintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124fmapsintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124vnniwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bitalgintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512cdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512dqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512erintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmavlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512pfintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmivlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlbwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vldqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnnivlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectvlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqvlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxifmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxneconvertintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniint8intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmi2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cetintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cldemoteintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clflushoptintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clwbintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clzerointrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cmpccxaddintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/enqcmdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/f16cintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fxsrintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/gfniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/hresetintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/ia32intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/immintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/keylockerintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/limits.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lwpintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lzcntintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mm_malloc.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/movdirintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pconfigintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pkuintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/popcntintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/raointintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rdseedintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rtmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/serializeintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/sgxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/shaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/smmintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tbmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tsxldtrkintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/uintrintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vaesintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vpclmulqdqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/waitpkgintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wbnoinvdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/x86gprintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavecintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveoptintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavesintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h
+  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h
 
 CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/gameObject.cpp \
   /home/abux/Projects/c++/hengine/include/camera.h \
@@ -1560,7 +1342,6 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/
   /usr/include/c++/13.2.1/cstdint \
   /usr/include/c++/13.2.1/cstdio \
   /usr/include/c++/13.2.1/cstdlib \
-  /usr/include/c++/13.2.1/cstring \
   /usr/include/c++/13.2.1/cwchar \
   /usr/include/c++/13.2.1/cwctype \
   /usr/include/c++/13.2.1/debug/assertions.h \
@@ -1636,7 +1417,6 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/
   /usr/include/glm/detail/func_vector_relational.inl \
   /usr/include/glm/detail/qualifier.hpp \
   /usr/include/glm/detail/setup.hpp \
-  /usr/include/glm/detail/type_float.hpp \
   /usr/include/glm/detail/type_half.hpp \
   /usr/include/glm/detail/type_half.inl \
   /usr/include/glm/detail/type_mat2x2.hpp \
@@ -1657,8 +1437,6 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/
   /usr/include/glm/detail/type_mat4x3.inl \
   /usr/include/glm/detail/type_mat4x4.hpp \
   /usr/include/glm/detail/type_mat4x4.inl \
-  /usr/include/glm/detail/type_quat.hpp \
-  /usr/include/glm/detail/type_quat.inl \
   /usr/include/glm/detail/type_vec1.hpp \
   /usr/include/glm/detail/type_vec1.inl \
   /usr/include/glm/detail/type_vec2.hpp \
@@ -1710,60 +1488,34 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/
   /usr/include/glm/ext/matrix_projection.inl \
   /usr/include/glm/ext/matrix_transform.hpp \
   /usr/include/glm/ext/matrix_transform.inl \
-  /usr/include/glm/ext/quaternion_common.hpp \
-  /usr/include/glm/ext/quaternion_common.inl \
-  /usr/include/glm/ext/quaternion_double.hpp \
-  /usr/include/glm/ext/quaternion_double_precision.hpp \
-  /usr/include/glm/ext/quaternion_float.hpp \
-  /usr/include/glm/ext/quaternion_float_precision.hpp \
-  /usr/include/glm/ext/quaternion_geometric.hpp \
-  /usr/include/glm/ext/quaternion_geometric.inl \
-  /usr/include/glm/ext/quaternion_relational.hpp \
-  /usr/include/glm/ext/quaternion_relational.inl \
-  /usr/include/glm/ext/quaternion_transform.hpp \
-  /usr/include/glm/ext/quaternion_transform.inl \
-  /usr/include/glm/ext/quaternion_trigonometric.hpp \
-  /usr/include/glm/ext/quaternion_trigonometric.inl \
   /usr/include/glm/ext/scalar_constants.hpp \
   /usr/include/glm/ext/scalar_constants.inl \
   /usr/include/glm/ext/scalar_int_sized.hpp \
   /usr/include/glm/ext/scalar_uint_sized.hpp \
-  /usr/include/glm/ext/vector_bool1.hpp \
-  /usr/include/glm/ext/vector_bool1_precision.hpp \
   /usr/include/glm/ext/vector_bool2.hpp \
   /usr/include/glm/ext/vector_bool2_precision.hpp \
   /usr/include/glm/ext/vector_bool3.hpp \
   /usr/include/glm/ext/vector_bool3_precision.hpp \
   /usr/include/glm/ext/vector_bool4.hpp \
   /usr/include/glm/ext/vector_bool4_precision.hpp \
-  /usr/include/glm/ext/vector_double1.hpp \
-  /usr/include/glm/ext/vector_double1_precision.hpp \
   /usr/include/glm/ext/vector_double2.hpp \
   /usr/include/glm/ext/vector_double2_precision.hpp \
   /usr/include/glm/ext/vector_double3.hpp \
   /usr/include/glm/ext/vector_double3_precision.hpp \
   /usr/include/glm/ext/vector_double4.hpp \
   /usr/include/glm/ext/vector_double4_precision.hpp \
-  /usr/include/glm/ext/vector_float1.hpp \
-  /usr/include/glm/ext/vector_float1_precision.hpp \
   /usr/include/glm/ext/vector_float2.hpp \
   /usr/include/glm/ext/vector_float2_precision.hpp \
   /usr/include/glm/ext/vector_float3.hpp \
   /usr/include/glm/ext/vector_float3_precision.hpp \
   /usr/include/glm/ext/vector_float4.hpp \
   /usr/include/glm/ext/vector_float4_precision.hpp \
-  /usr/include/glm/ext/vector_int1.hpp \
-  /usr/include/glm/ext/vector_int1_sized.hpp \
   /usr/include/glm/ext/vector_int2.hpp \
   /usr/include/glm/ext/vector_int2_sized.hpp \
   /usr/include/glm/ext/vector_int3.hpp \
   /usr/include/glm/ext/vector_int3_sized.hpp \
   /usr/include/glm/ext/vector_int4.hpp \
   /usr/include/glm/ext/vector_int4_sized.hpp \
-  /usr/include/glm/ext/vector_relational.hpp \
-  /usr/include/glm/ext/vector_relational.inl \
-  /usr/include/glm/ext/vector_uint1.hpp \
-  /usr/include/glm/ext/vector_uint1_sized.hpp \
   /usr/include/glm/ext/vector_uint2.hpp \
   /usr/include/glm/ext/vector_uint2_sized.hpp \
   /usr/include/glm/ext/vector_uint3.hpp \
@@ -1775,15 +1527,8 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/
   /usr/include/glm/glm.hpp \
   /usr/include/glm/gtc/constants.hpp \
   /usr/include/glm/gtc/constants.inl \
-  /usr/include/glm/gtc/epsilon.hpp \
-  /usr/include/glm/gtc/epsilon.inl \
   /usr/include/glm/gtc/matrix_transform.hpp \
   /usr/include/glm/gtc/matrix_transform.inl \
-  /usr/include/glm/gtc/quaternion.hpp \
-  /usr/include/glm/gtc/quaternion.inl \
-  /usr/include/glm/gtc/type_ptr.hpp \
-  /usr/include/glm/gtc/type_ptr.inl \
-  /usr/include/glm/gtc/vec1.hpp \
   /usr/include/glm/integer.hpp \
   /usr/include/glm/mat2x2.hpp \
   /usr/include/glm/mat2x3.hpp \
@@ -1815,8 +1560,6 @@ CMakeFiles/engine.dir/src/gameObject.cpp.o: /home/abux/Projects/c++/hengine/src/
   /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
-  /usr/include/string.h \
-  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/single_threaded.h \
@@ -3494,8 +3237,6 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /home/abux/Projects/c++/hengine/include/imgui/imgui.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h \
   /home/abux/Projects/c++/hengine/include/imgui/imgui_impl_opengl3.h \
-  /home/abux/Projects/c++/hengine/include/imgui/imgui_internal.h \
-  /home/abux/Projects/c++/hengine/include/imgui/imstb_textedit.h \
   /home/abux/Projects/c++/hengine/include/sceneManager.h \
   /home/abux/Projects/c++/hengine/include/shader.h \
   /home/abux/Projects/c++/hengine/include/skybox.h \
@@ -3585,7 +3326,6 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/backward/binders.h \
   /usr/include/c++/13.2.1/bit \
   /usr/include/c++/13.2.1/bits/alloc_traits.h \
-  /usr/include/c++/13.2.1/bits/allocated_ptr.h \
   /usr/include/c++/13.2.1/bits/allocator.h \
   /usr/include/c++/13.2.1/bits/basic_ios.h \
   /usr/include/c++/13.2.1/bits/basic_ios.tcc \
@@ -3593,7 +3333,6 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/bits/basic_string.tcc \
   /usr/include/c++/13.2.1/bits/char_traits.h \
   /usr/include/c++/13.2.1/bits/charconv.h \
-  /usr/include/c++/13.2.1/bits/chrono.h \
   /usr/include/c++/13.2.1/bits/codecvt.h \
   /usr/include/c++/13.2.1/bits/concept_check.h \
   /usr/include/c++/13.2.1/bits/cpp_type_traits.h \
@@ -3602,10 +3341,6 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/bits/exception.h \
   /usr/include/c++/13.2.1/bits/exception_defines.h \
   /usr/include/c++/13.2.1/bits/exception_ptr.h \
-  /usr/include/c++/13.2.1/bits/fs_dir.h \
-  /usr/include/c++/13.2.1/bits/fs_fwd.h \
-  /usr/include/c++/13.2.1/bits/fs_ops.h \
-  /usr/include/c++/13.2.1/bits/fs_path.h \
   /usr/include/c++/13.2.1/bits/fstream.tcc \
   /usr/include/c++/13.2.1/bits/functexcept.h \
   /usr/include/c++/13.2.1/bits/functional_hash.h \
@@ -3615,11 +3350,8 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/bits/istream.tcc \
   /usr/include/c++/13.2.1/bits/locale_classes.h \
   /usr/include/c++/13.2.1/bits/locale_classes.tcc \
-  /usr/include/c++/13.2.1/bits/locale_conv.h \
   /usr/include/c++/13.2.1/bits/locale_facets.h \
   /usr/include/c++/13.2.1/bits/locale_facets.tcc \
-  /usr/include/c++/13.2.1/bits/locale_facets_nonio.h \
-  /usr/include/c++/13.2.1/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13.2.1/bits/localefwd.h \
   /usr/include/c++/13.2.1/bits/memory_resource.h \
   /usr/include/c++/13.2.1/bits/memoryfwd.h \
@@ -3628,16 +3360,12 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/bits/new_allocator.h \
   /usr/include/c++/13.2.1/bits/ostream.tcc \
   /usr/include/c++/13.2.1/bits/ostream_insert.h \
-  /usr/include/c++/13.2.1/bits/parse_numbers.h \
   /usr/include/c++/13.2.1/bits/postypes.h \
   /usr/include/c++/13.2.1/bits/predefined_ops.h \
   /usr/include/c++/13.2.1/bits/ptr_traits.h \
-  /usr/include/c++/13.2.1/bits/quoted_string.h \
   /usr/include/c++/13.2.1/bits/range_access.h \
   /usr/include/c++/13.2.1/bits/refwrap.h \
   /usr/include/c++/13.2.1/bits/requires_hosted.h \
-  /usr/include/c++/13.2.1/bits/shared_ptr.h \
-  /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
   /usr/include/c++/13.2.1/bits/specfun.h \
   /usr/include/c++/13.2.1/bits/sstream.tcc \
   /usr/include/c++/13.2.1/bits/std_abs.h \
@@ -3655,7 +3383,6 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/13.2.1/bits/string_view.tcc \
   /usr/include/c++/13.2.1/bits/stringfwd.h \
-  /usr/include/c++/13.2.1/bits/unique_ptr.h \
   /usr/include/c++/13.2.1/bits/uses_allocator.h \
   /usr/include/c++/13.2.1/bits/uses_allocator_args.h \
   /usr/include/c++/13.2.1/bits/utility.h \
@@ -3667,40 +3394,31 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/climits \
   /usr/include/c++/13.2.1/clocale \
   /usr/include/c++/13.2.1/cmath \
-  /usr/include/c++/13.2.1/codecvt \
   /usr/include/c++/13.2.1/cstddef \
   /usr/include/c++/13.2.1/cstdint \
   /usr/include/c++/13.2.1/cstdio \
   /usr/include/c++/13.2.1/cstdlib \
   /usr/include/c++/13.2.1/cstring \
-  /usr/include/c++/13.2.1/ctime \
   /usr/include/c++/13.2.1/cwchar \
   /usr/include/c++/13.2.1/cwctype \
   /usr/include/c++/13.2.1/debug/assertions.h \
   /usr/include/c++/13.2.1/debug/debug.h \
   /usr/include/c++/13.2.1/exception \
-  /usr/include/c++/13.2.1/ext/aligned_buffer.h \
   /usr/include/c++/13.2.1/ext/alloc_traits.h \
   /usr/include/c++/13.2.1/ext/atomicity.h \
-  /usr/include/c++/13.2.1/ext/concurrence.h \
   /usr/include/c++/13.2.1/ext/numeric_traits.h \
   /usr/include/c++/13.2.1/ext/string_conversions.h \
   /usr/include/c++/13.2.1/ext/type_traits.h \
-  /usr/include/c++/13.2.1/filesystem \
   /usr/include/c++/13.2.1/fstream \
   /usr/include/c++/13.2.1/initializer_list \
-  /usr/include/c++/13.2.1/iomanip \
   /usr/include/c++/13.2.1/ios \
   /usr/include/c++/13.2.1/iosfwd \
   /usr/include/c++/13.2.1/iostream \
   /usr/include/c++/13.2.1/istream \
   /usr/include/c++/13.2.1/limits \
-  /usr/include/c++/13.2.1/locale \
-  /usr/include/c++/13.2.1/math.h \
   /usr/include/c++/13.2.1/new \
   /usr/include/c++/13.2.1/ostream \
   /usr/include/c++/13.2.1/pstl/pstl_config.h \
-  /usr/include/c++/13.2.1/ratio \
   /usr/include/c++/13.2.1/sstream \
   /usr/include/c++/13.2.1/stdexcept \
   /usr/include/c++/13.2.1/stdlib.h \
@@ -3736,9 +3454,7 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
-  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
-  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -3927,7 +3643,6 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/glm/vector_relational.hpp \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
-  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
@@ -3948,106 +3663,12 @@ CMakeFiles/engine.dir/src/main.cpp.o: /home/abux/Projects/c++/hengine/src/main.c
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/adxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxbf16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxcomplexintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxfp16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxint8intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxtileintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124fmapsintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124vnniwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bitalgintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512cdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512dqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512erintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmavlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512pfintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmivlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlbwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vldqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnnivlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectvlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqvlintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxifmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxneconvertintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniint8intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmi2intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cetintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cldemoteintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clflushoptintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clwbintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clzerointrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cmpccxaddintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/enqcmdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/f16cintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fmaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fxsrintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/gfniintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/hresetintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/ia32intrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/immintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/keylockerintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/limits.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lwpintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lzcntintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mm_malloc.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/movdirintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pconfigintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pkuintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/popcntintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchiintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchwintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/raointintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rdseedintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rtmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/serializeintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/sgxintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/shaintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/smmintrin.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tbmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tsxldtrkintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/uintrintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vaesintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vpclmulqdqintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/waitpkgintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wbnoinvdintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/x86gprintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavecintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveoptintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavesintrin.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h
+  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h
 
 CMakeFiles/engine.dir/src/shader.cpp.o: /home/abux/Projects/c++/hengine/src/shader.cpp \
   /home/abux/Projects/c++/hengine/include/glad/glad.h \
@@ -4559,7 +4180,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
   /home/abux/Projects/c++/hengine/include/glad/glad.h \
   /home/abux/Projects/c++/hengine/include/stb_image.h \
   /home/abux/Projects/c++/hengine/include/textureManager.h \
-  /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -4781,41 +4401,17 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /home/abux/Projects/c++/hengine/src/imgui/imgui_demo.cpp:
 
-/home/abux/Projects/c++/hengine/src/glad.c:
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavesintrin.h:
 
-/home/abux/Projects/c++/hengine/src/gameObjects/planeObject.cpp:
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h:
 
-/home/abux/Projects/c++/hengine/src/gameObject.cpp:
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/x86gprintrin.h:
 
-/usr/include/libintl.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wbnoinvdintrin.h:
 
-/usr/include/c++/13.2.1/ratio:
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxcomplexintrin.h:
 
-/usr/include/c++/13.2.1/locale:
-
-/usr/include/c++/13.2.1/filesystem:
-
-/usr/include/c++/13.2.1/ctime:
-
-/usr/include/c++/13.2.1/codecvt:
-
-/usr/include/c++/13.2.1/bits/unique_ptr.h:
-
-/usr/include/c++/13.2.1/bits/shared_ptr_base.h:
-
-/usr/include/c++/13.2.1/bits/shared_ptr.h:
-
-/usr/include/c++/13.2.1/bits/quoted_string.h:
-
-/usr/include/c++/13.2.1/bits/locale_facets_nonio.tcc:
-
-/usr/include/c++/13.2.1/bits/locale_conv.h:
-
-/usr/include/c++/13.2.1/bits/fs_path.h:
-
-/usr/include/c++/13.2.1/bits/fs_ops.h:
-
-/usr/include/c++/13.2.1/bits/fs_dir.h:
+/usr/include/glm/detail/type_mat2x4.inl:
 
 /usr/include/glm/detail/type_mat2x3.hpp:
 
@@ -4834,10 +4430,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 /usr/include/glm/detail/compute_common.hpp:
 
 /usr/include/strings.h:
-
-/usr/include/bits/dlfcn.h:
-
-/usr/include/glm/detail/_vectorize.hpp:
 
 /usr/include/glm/detail/_fixes.hpp:
 
@@ -4941,8 +4533,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/c++/13.2.1/cassert:
 
-/usr/include/c++/13.2.1/bits/locale_facets_nonio.h:
-
 /usr/include/c++/13.2.1/bits/locale_classes.tcc:
 
 /usr/include/glm/detail/type_mat2x3.inl:
@@ -4958,8 +4548,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 /usr/include/bits/fp-fast.h:
 
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h:
-
-/usr/include/c++/13.2.1/bits/parse_numbers.h:
 
 /usr/include/glm/ext/vector_uint2.hpp:
 
@@ -4999,9 +4587,11 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/glm/detail/func_vector_relational.inl:
 
-/usr/include/bits/types/__FILE.h:
+/usr/include/bits/mathcalls-helper-functions.h:
 
-/usr/include/c++/13.2.1/ext/concurrence.h:
+/usr/include/glm/detail/type_mat4x3.inl:
+
+/usr/include/bits/types/__FILE.h:
 
 /usr/include/c++/13.2.1/bits/ios_base.h:
 
@@ -5031,10 +4621,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/glm/ext/vector_int2_sized.hpp:
 
-/home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp:
-
-/usr/include/bits/types/cookie_io_functions_t.h:
-
 /usr/include/c++/13.2.1/debug/assertions.h:
 
 /usr/include/c++/13.2.1/bits/string_view.tcc:
@@ -5059,29 +4645,17 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/c++/13.2.1/bits/basic_string.tcc:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveintrin.h:
+
+/home/abux/Projects/c++/hengine/src/imgui/imgui.cpp:
+
+/usr/include/glm/ext/matrix_float2x3_precision.hpp:
+
 /usr/include/bits/uio_lim.h:
 
 /usr/include/glm/ext/matrix_double2x4.hpp:
 
 /usr/include/bits/math-vector.h:
-
-/usr/include/bits/libc-header-start.h:
-
-/usr/include/glm/ext/vector_uint3.hpp:
-
-/usr/include/bits/long-double.h:
-
-/usr/include/glm/detail/type_half.hpp:
-
-/usr/include/c++/13.2.1/bits/cxxabi_init_exception.h:
-
-/usr/include/GLFW/glfw3.h:
-
-/usr/include/c++/13.2.1/istream:
-
-/usr/include/c++/13.2.1/bits/cpp_type_traits.h:
-
-/usr/include/sys/select.h:
 
 /home/abux/Projects/c++/hengine/src/imgui/imgui_widgets.cpp:
 
@@ -5093,6 +4667,10 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/bits/types/timer_t.h:
 
+/usr/include/bits/libc-header-start.h:
+
+/usr/include/glm/ext/vector_uint3.hpp:
+
 /usr/include/bits/posix1_lim.h:
 
 /usr/include/bits/iscanonical.h:
@@ -5101,7 +4679,59 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/wchar.h:
 
-/home/abux/Projects/c++/hengine/include/imgui/imgui_internal.h:
+/usr/include/glm/detail/type_half.hpp:
+
+/usr/include/c++/13.2.1/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cmpccxaddintrin.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/glm/detail/type_mat3x4.inl:
+
+/home/abux/Projects/c++/hengine/include/stb_image.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/glm/ext/vector_bool1_precision.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vaesintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h:
+
+/usr/include/c++/13.2.1/cerrno:
+
+/usr/include/glm/ext/matrix_float2x4_precision.hpp:
+
+/usr/include/glm/detail/compute_vector_relational.hpp:
+
+/usr/include/glm/ext/matrix_clip_space.inl:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/sgxintrin.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wmmintrin.h:
+
+/usr/include/bits/pthread_stack_min-dynamic.h:
+
+/home/abux/Projects/c++/hengine/src/gameObject.cpp:
+
+/usr/include/GLFW/glfw3.h:
+
+/usr/include/c++/13.2.1/istream:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/bits/time64.h:
+
+/usr/include/c++/13.2.1/bits/cpp_type_traits.h:
+
+/usr/include/sys/select.h:
 
 /home/abux/Projects/c++/hengine/include/imgui/imgui.h:
 
@@ -5112,6 +4742,10 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 /usr/include/glm/ext/matrix_double4x3_precision.hpp:
 
 /usr/include/bits/cpu-set.h:
+
+/usr/include/glm/detail/_vectorize.hpp:
+
+/usr/include/bits/dlfcn.h:
 
 /usr/include/c++/13.2.1/new:
 
@@ -5131,8 +4765,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/c++/13.2.1/stdlib.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/x86gprintrin.h:
-
 /usr/include/c++/13.2.1/bits/requires_hosted.h:
 
 /usr/include/bits/types/__fpos64_t.h:
@@ -5151,19 +4783,9 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/bits/thread-shared-types.h:
 
-/usr/include/bits/stdlib-float.h:
-
-/usr/include/bits/time64.h:
-
 /usr/include/c++/13.2.1/tuple:
 
 /usr/include/bits/endianness.h:
-
-/usr/include/bits/mathcalls-helper-functions.h:
-
-/usr/include/glm/detail/type_mat4x3.inl:
-
-/home/abux/Projects/c++/hengine/include/imgui/imstb_textedit.h:
 
 /usr/include/c++/13.2.1/typeinfo:
 
@@ -5171,45 +4793,19 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16vlintrin.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnniintrin.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveoptintrin.h:
+
+/home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h:
 
 /usr/include/glm/ext/vector_bool3.hpp:
 
 /home/abux/Projects/c++/hengine/src/shader.cpp:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/limits.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cmpccxaddintrin.h:
-
-/usr/include/bits/waitstatus.h:
-
-/usr/include/glm/detail/type_mat3x4.inl:
-
-/home/abux/Projects/c++/hengine/include/stb_image.h:
-
-/usr/include/gnu/stubs-64.h:
-
-/usr/include/glm/ext/vector_bool1_precision.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vaesintrin.h:
-
-/usr/include/c++/13.2.1/math.h:
-
-/usr/include/glm/ext/matrix_float2x4_precision.hpp:
-
-/usr/include/glm/detail/compute_vector_relational.hpp:
-
-/usr/include/glm/ext/matrix_clip_space.inl:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/sgxintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h:
 
 /usr/include/wctype.h:
 
@@ -5247,8 +4843,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/bits/atomic_wide_counter.h:
 
-/usr/include/c++/13.2.1/ext/aligned_buffer.h:
-
 /usr/include/c++/13.2.1/string_view:
 
 /usr/include/c++/13.2.1/bits/sstream.tcc:
@@ -5285,10 +4879,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/c++/13.2.1/bits/localefwd.h:
 
-/home/abux/Projects/c++/hengine/include/imgui/imgui_impl_glfw.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveoptintrin.h:
-
 /usr/include/bits/mathcalls.h:
 
 /usr/include/bits/types/__fpos_t.h:
@@ -5303,11 +4893,17 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vpclmulqdqintrin.h:
 
+/usr/include/glm/detail/type_mat3x2.hpp:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
 /usr/include/c++/13.2.1/bits/allocator.h:
 
 /usr/include/c++/13.2.1/bits/specfun.h:
 
 /usr/include/glm/detail/type_mat3x2.inl:
+
+/home/abux/Projects/c++/hengine/src/glad.c:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmiintrin.h:
 
@@ -5334,8 +4930,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 /usr/include/bits/struct_rwlock.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/c++/13.2.1/bits/chrono.h:
 
 /usr/include/bits/types/struct_sched_param.h:
 
@@ -5447,14 +5041,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/glm/ext/vector_bool4_precision.hpp:
 
-/usr/include/glm/detail/type_mat2x4.inl:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/glm/detail/type_mat3x2.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxcomplexintrin.h:
-
 /usr/include/glm/detail/type_mat3x4.hpp:
 
 /usr/include/glm/detail/func_exponential.inl:
@@ -5499,8 +5085,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /home/abux/Projects/c++/hengine/include/engine.h:
 
-/usr/include/c++/13.2.1/bits/allocated_ptr.h:
-
 /usr/include/c++/13.2.1/bits/vector.tcc:
 
 /usr/include/glm/ext/matrix_double4x2.hpp:
@@ -5530,6 +5114,12 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lzcntintrin.h:
 
 /usr/include/glm/ext/matrix_float2x2.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavecintrin.h:
+
+/usr/include/c++/13.2.1/cstdlib:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fmaintrin.h:
 
 /usr/include/glm/ext/matrix_float2x3.hpp:
 
@@ -5671,15 +5261,9 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniintrin.h:
 
-/usr/include/dlfcn.h:
-
-/usr/include/glm/ext/vector_float4_precision.hpp:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2vlintrin.h:
 
 /usr/include/glm/ext/vector_int1.hpp:
-
-/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/time_members.h:
 
 /usr/include/glm/detail/type_quat.inl:
 
@@ -5691,9 +5275,11 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/glm/ext/vector_uint2_sized.hpp:
 
-/usr/include/c++/13.2.1/bits/fs_fwd.h:
-
 /usr/include/glm/ext/vector_uint4.hpp:
+
+/usr/include/glm/ext/vector_float4_precision.hpp:
+
+/usr/include/dlfcn.h:
 
 /usr/include/glm/fwd.hpp:
 
@@ -5718,6 +5304,8 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 /usr/include/glm/detail/type_vec4.hpp:
 
 /usr/include/glm/simd/platform.h:
+
+/home/abux/Projects/c++/hengine/src/gameObjects/planeObject.cpp:
 
 /usr/include/endian.h:
 
@@ -5783,6 +5371,40 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/include/sys/single_threaded.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/glm/ext/quaternion_transform.inl:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/ia32intrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16vlintrin.h:
+
+/usr/include/c++/13.2.1/bits/streambuf_iterator.h:
+
+/home/abux/Projects/c++/hengine/src/camera.cpp:
+
+/usr/include/c++/13.2.1/bits/stl_bvector.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rdseedintrin.h:
+
+/usr/include/glm/detail/type_mat3x3.inl:
+
+/home/abux/Projects/c++/hengine/src/engine.cpp:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+/home/abux/Projects/c++/hengine/src/gameObjects/cubeObject.cpp:
+
+/home/abux/Projects/c++/hengine/include/imgui/imgui_internal.h:
+
+/home/abux/Projects/c++/hengine/include/imgui/imstb_textedit.h:
+
+/usr/include/c++/13.2.1/math.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxint8intrin.h:
 
 /usr/include/c++/13.2.1/bits/functexcept.h:
@@ -5803,25 +5425,11 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bwintrin.h:
 
-/usr/include/c++/13.2.1/cerrno:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512dqintrin.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512erintrin.h:
-
-/usr/include/bits/typesizes.h:
-
-/usr/include/glm/ext/quaternion_transform.inl:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/ia32intrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16vlintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlbwintrin.h:
 
@@ -5863,8 +5471,6 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clwbintrin.h:
 
-/usr/include/c++/13.2.1/iomanip:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clzerointrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/hresetintrin.h:
@@ -5897,46 +5503,10 @@ CMakeFiles/engine.dir/src/textureManager.cpp.o: /home/abux/Projects/c++/hengine/
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/raointintrin.h:
 
-/usr/include/c++/13.2.1/bits/streambuf_iterator.h:
-
-/home/abux/Projects/c++/hengine/src/camera.cpp:
-
-/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/messages_members.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rtmintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/serializeintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/smmintrin.h:
 
-/usr/include/c++/13.2.1/bits/stl_bvector.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rdseedintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/syslimits.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tsxldtrkintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wbnoinvdintrin.h:
-
-/usr/include/bits/pthread_stack_min-dynamic.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wmmintrin.h:
-
-/usr/include/c++/13.2.1/cstdlib:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fmaintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavecintrin.h:
-
-/home/abux/Projects/c++/hengine/src/imgui/imgui.cpp:
-
-/usr/include/glm/ext/matrix_float2x3_precision.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavesintrin.h:
-
-/usr/include/glm/detail/type_mat3x3.inl:
-
-/home/abux/Projects/c++/hengine/src/engine.cpp:

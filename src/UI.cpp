@@ -18,20 +18,33 @@ UI::UI(GLFWwindow* window) {
 
   ImGui_ImplGlfw_InitForOpenGL(window, true);
   ImGui_ImplOpenGL3_Init("#version 330 core");
+
+  sceneManager = new SceneManager();
 }
 
-void UI::worldUI(Camera* camera, bool& skyboxEnabled, bool& wireframeMode, float background[4], glm::vec3& lightPos) {
+void UI::worldUI(Camera* camera, std::vector<CubeObject*>& gameobjects, bool& skyboxEnabled, bool& wireframeMode, float background[4], glm::vec3& lightPos) {
   ImGui::Begin("World");
+
   ImGui::Checkbox("Skybox", &skyboxEnabled);
   ImGui::Checkbox("Wireframe mode", &wireframeMode);
   ImGui::SliderFloat("FOV", &camera->Fov, 45.0f, 120.0f);
   ImGui::InputFloat("Speed", &camera->MovementSpeed);
   if (!skyboxEnabled) ImGui::ColorEdit4("Background", background);
   ImGui::InputFloat3("Light pos", &lightPos[0]);
+
+  ImGui::Spacing();
+ 
+  ImGui::TextColored(ImVec4(0, 1, 1, 1), "Scene");
+  // Save & Load -----------------
+  if (ImGui::Button("Save")) { sceneManager->saveScene("scene", gameobjects); }
+  ImGui::SameLine();
+  if (ImGui::Button("Load")) { sceneManager->loadScene("scene", gameobjects); }
+  // Save & Load -----------------
+
   ImGui::End();
 }
 
-void UI::gameobjectsUI(TextureManager* textureManager, std::vector<CubeObject*>& gameobjects, int& objectSelected) {
+void UI::gameobjectsUI(TextureManager* textureManager, std::vector<CubeObject*>& gameobjects) {
   ImGui::Begin("World-GameObjects");
   ImGui::BeginChild("GameObjects");
   ImGui::TextColored(ImVec4(1,1,0,1), "GameObjects");
@@ -73,33 +86,37 @@ void UI::toolkitUI(Camera* camera) {
   ImGui::End();
 }
 
-void UI::inspectUI(TextureManager* textureManager, std::vector<CubeObject*>& gameobjects, int& objectSelected) {
+void UI::inspectUI(TextureManager* textureManager, std::vector<CubeObject*>& gameobjects) {
   ImGui::Begin("Inspect");
   if (objectSelected != -1) {
     ImGui::TextColored(ImVec4(0, 1, 1, 1), "Selected Object ID: %i", objectSelected);
-    ImGui::Text("Position: ");
-    ImGui::SameLine();
-    glm::vec3 pos = gameobjects[objectSelected]->getPos();
-    char pos_id[32];
-    snprintf(pos_id, sizeof(pos_id), "###Position%d", objectSelected);
-    if (ImGui::InputFloat3(pos_id, glm::value_ptr(pos))) {
-        gameobjects[objectSelected]->setPos(pos);
-    }
+    // Set position -----------------
+    glm::vec3 pos = gameobjects[objectSelected]->pos;
+    if (ImGui::InputFloat3("Position", glm::value_ptr(pos))) { gameobjects[objectSelected]->pos = pos; }
+    // Set position -----------------
 
-    ImGui::Text("Rotation: ");
-    ImGui::SameLine();
+    // Set rotation -----------------
     glm::vec3 set_rot = gameobjects[objectSelected]->rot;
-    char rotation_id[32];
-    snprintf(rotation_id, sizeof(rotation_id), "###Rotation%d", objectSelected);
-    if (ImGui::InputFloat3(rotation_id, glm::value_ptr(set_rot))) { gameobjects[objectSelected]->rot = set_rot; }
+    if (ImGui::InputFloat3("Rotation", glm::value_ptr(set_rot))) { gameobjects[objectSelected]->rot = set_rot; }
+    // Set rotation -----------------
 
-    ImGui::Text("Size: ");
-    ImGui::SameLine();
-    glm::vec3 size = gameobjects[objectSelected]->getSize();
-    char size_id[32];
-    snprintf(size_id, sizeof(size_id), "###Size%d", objectSelected);
-    if (ImGui::InputFloat3(size_id, glm::value_ptr(size))) { gameobjects[objectSelected]->size = size; }
+    // Set size ---------------------
+    glm::vec3 size = gameobjects[objectSelected]->size;
+    if (ImGui::InputFloat3("Size", glm::value_ptr(size))) { gameobjects[objectSelected]->size = size; }
+    // Set size ---------------------
 
+    // Set material -----------------
+    ImGui::TextColored(ImVec4(0, 1, 1, 1), "Material");
+    glm::vec4 material = gameobjects[objectSelected]->material;
+    if (ImGui::InputFloat4("Material", glm::value_ptr(material))) { gameobjects[objectSelected]->material = material; }
+    // Set material -----------------
+
+    // Set color --------------------
+    glm::vec3 material_color = gameobjects[objectSelected]->objectColor;
+    if (ImGui::ColorEdit3("Color", glm::value_ptr(material_color))) { gameobjects[objectSelected]->objectColor = material_color; }
+    // Set color --------------------
+
+    // Set shaders ------------------
     ImGui::TextColored(ImVec4(0, 1, 1, 1), "Shaders");
     ImGui::Text("Current shader: %i", gameobjects[objectSelected]->objectShader);
     ImGui::Text("Shader: ");
@@ -107,6 +124,7 @@ void UI::inspectUI(TextureManager* textureManager, std::vector<CubeObject*>& gam
     if (ImGui::Button("Textured")) gameobjects[objectSelected]->objectShader = GameObject::TEXTURED;
     ImGui::SameLine();
     if (ImGui::Button("Colored")) gameobjects[objectSelected]->objectShader = GameObject::COLOR;
+    // Set shaders ------------------
 
     if (gameobjects[objectSelected]->objectShader == GameObject::TEXTURED) {
     static unsigned int seltex;

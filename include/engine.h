@@ -4,23 +4,11 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <filesystem>
 #include <vector>
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-#include <imgui.h>
-#include <imgui_internal.h>
-#include <imgui_impl_glfw.h>
-#include <imgui_impl_opengl3.h>
-#include <UI.h>
-
 #include <shader.h>
-#include <stb_image.h>
-#include <sceneManager.h>
 #include <textureManager.h>
+#include <UI.h>
 #include <skybox.h>
 #include <camera.h>
 #include <cubeObject.h>
@@ -36,37 +24,48 @@ public:
   void inputs(GLFWwindow* window);
   void render();
 
+  void mouse_callback();
+
   void clean();
 
   GLFWwindow* window;
 
 private:
-  // Shader
-  unsigned int VAO, VBO, colorVAO, lightVAO;
-  unsigned int planeVAO, planeVBO;
+  float background[4] = { 0.912f, 0.912f, 0.912f, 1.0f };
+
+  // Instance
+  TextureManager* textureManager = nullptr;
+  UI* ui = nullptr;
+  Camera* camera = nullptr;
+  GameObject* lightcube = nullptr;
+  GameObject* grid = nullptr;
+  Skybox* skybox = nullptr;
+
+  // UI
+  bool showUI = false;
+
+  // Camera
+  float lastX = 1280 / 2.0f;
+  float lastY = 720 / 2.0f;
+  bool firstMouse = !showUI;
+  bool mouseLocked = true;
+  glm::mat4 projection;
+  glm::mat4 view;
 
   // Map
-  UI* ui = nullptr;
   unsigned int skyboxTex;
   std::vector<CubeObject*> gameobjects;
   bool showObjectNameInput = false;
-  int objectSelected = -1;
   bool skyboxEnabled = true;
 
   // Lighting
   glm::vec3 lightPos;
 
-  // Camera
-  glm::mat4 projection;
-  glm::mat4 view;
-
-  // timing
+  // Timing
   float deltaTime = 0.0f;
   float lastFrame = 0.0f;
 
   bool wireframeMode = false;
-
-  unsigned int texture1, texture2;
 };
 
 #endif

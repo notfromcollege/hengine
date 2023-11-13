@@ -45,3 +45,7 @@ vim
 cd Projects/c++/hengine
 vim
 vim
+cd Projects/c++/hengine
+vim
+cd Projects/c++/hengine
+git status

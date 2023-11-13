@@ -1,46 +1,9 @@
 #include <engine.h>
 
-SceneManager* sceneManager = nullptr;
-TextureManager* textureManager = nullptr;
-GameObject* lightcube = nullptr;
-GameObject* grid = nullptr;
-Skybox* skybox = nullptr;
-bool showUI = false;
-
 int screen_width, screen_height;
-float background[] = { 0.912f, 0.912f, 0.912f, 1.0f };
-
-// camera
-Camera* camera = nullptr;
-float lastX = 1280 / 2.0f;
-float lastY = 720 / 2.0f;
-bool firstMouse = !showUI;
-bool mouseLocked = true;
-
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
-  screen_width = width;
-  screen_height = height;
+  screen_width = width; screen_height = height;
   glViewport(0, 0, screen_width, screen_height);
-}
-
-void mouse_callback(GLFWwindow* window, double xposIn, double yposIn) {
-  if (!mouseLocked) return;
-  float xpos = static_cast<float>(xposIn);
-  float ypos = static_cast<float>(yposIn);
-
-  if (firstMouse) {
-    lastX = xpos;
-    lastY = ypos;
-    firstMouse = false;
-  }
-
-  float xoffset = xpos - lastX;
-  float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-
-  lastX = xpos;
-  lastY = ypos;
-
-  camera->ProcessMouseMovement(xoffset, yoffset);
 }
 
 Engine::Engine(int swidth, int sheight) {
@@ -65,7 +28,6 @@ Engine::Engine(int swidth, int sheight) {
   }
   glfwMakeContextCurrent(window);
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-  glfwSetCursorPosCallback(window, mouse_callback);
 
   // Initialize GLAD
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
@@ -75,11 +37,10 @@ Engine::Engine(int swidth, int sheight) {
   // OPENGL Config
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_MULTISAMPLE);
+  //glEnable(GL_CULL_FACE);
 
   ui = new UI(window);
 
-  sceneManager = new SceneManager();
-  sceneManager->loadScene("scene", gameobjects);
   textureManager = new TextureManager();
   // Load skybox
   skybox = new Skybox(textureManager->skyboxFaces);
@@ -88,6 +49,11 @@ Engine::Engine(int swidth, int sheight) {
   lightPos = glm::vec3(12.0f, 4.0f, 12.0f);
   lightcube = new GameObject(lightPos, GameObject::LIGHTING);
   grid = new GameObject(glm::vec3(0.0f, -0.5f, 0.0f));
+
+  lastX = 1280 / 2.0f;
+  lastY = 720 / 2.0f;
+  firstMouse = !showUI;
+  mouseLocked = true;
 }
 
 void Engine::update() {
@@ -97,16 +63,18 @@ void Engine::update() {
   lastFrame = currentFrame;
   
   if (mouseLocked)   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); else glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-  if (wireframeMode) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); else glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); 
+  if (wireframeMode) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); else glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
   // camera/view transformation
   projection = glm::perspective(glm::radians(camera->Fov), (float)screen_width / (float)screen_height, 0.1f, 100.0f);
   view = camera->GetViewMatrix();
+
+  mouse_callback();
 }
 
 void Engine::inputs(GLFWwindow *window) {
   // Take window key inputs
-  if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) { sceneManager->saveScene("scene", gameobjects); glfwSetWindowShouldClose(window, true); }
+  if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) { glfwSetWindowShouldClose(window, true); }
   if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) { mouseLocked = true; showUI = false; }
   if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) { mouseLocked = false; showUI = true; }
 
@@ -127,9 +95,9 @@ void Engine::render() {
   ImGui::DockSpaceOverViewport(ImGui::GetMainViewport(), ImGuiDockNodeFlags_PassthruCentralNode);
  
   if (showUI) {
-    ui->worldUI(camera, skyboxEnabled, wireframeMode, background, lightPos);
-    ui->gameobjectsUI(textureManager, gameobjects, objectSelected);
-    ui->inspectUI(textureManager, gameobjects, objectSelected);
+    ui->worldUI(camera, gameobjects, skyboxEnabled, wireframeMode, background, lightPos);
+    ui->gameobjectsUI(textureManager, gameobjects);
+    ui->inspectUI(textureManager, gameobjects);
     ui->toolkitUI(camera);
     ui->consoleUI();
   }
@@ -156,14 +124,35 @@ void Engine::render() {
   glfwPollEvents();
 }
 
+void Engine::mouse_callback() {
+  double xposIn, yposIn;
+  glfwGetCursorPos(window, &xposIn, &yposIn);
+
+  if (!mouseLocked) return;
+
+  float xpos = static_cast<float>(xposIn);
+  float ypos = static_cast<float>(yposIn);
+
+  if (firstMouse) {
+    lastX = xpos;
+    lastY = ypos;
+    firstMouse = false;
+  }
+
+  float xoffset = xpos - lastX;
+  float yoffset = lastY - ypos;
+
+  lastX = xpos;
+  lastY = ypos;
+
+  camera->ProcessMouseMovement(xoffset, yoffset);
+}
+
 void Engine::clean() {
   ImGui_ImplOpenGL3_Shutdown();
   ImGui_ImplGlfw_Shutdown();
   ImGui::DestroyContext();
 
-  glDeleteVertexArrays(1, &VAO);
-  glDeleteVertexArrays(1, &lightVAO);
-  glDeleteBuffers(1, &VBO);
   for (CubeObject* obj : gameobjects) {
     obj->clean();
   }
