@@ -2,10 +2,12 @@
 
 Very simple (in development Engine)
 
-#Dependencies
+# Dependencies
 **Archlinux**
 > sudo pacman -Sy glfw
+
 > sudo pacman -Sy imgui
+
 > sudo pacman -Sy assimp
 
 **Windows**
