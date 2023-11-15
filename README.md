@@ -28,5 +28,3 @@ sudo pacman -Sy glfw imgui assimp
 > Press ESCAPE
 
 ![image](https://github.com/abuxTM/hengine/assets/104513379/a77b7d78-92db-418b-95f8-26945c767041)
-
-# TODO
