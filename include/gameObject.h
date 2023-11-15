@@ -9,7 +9,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <shader.h>
-#include <camera.h>
 
 class GameObject {
 public:
@@ -22,9 +21,11 @@ public:
   void clean();
 
   void update();
-  void render(Camera* camera, glm::vec3 lightPos, glm::mat4 projection, glm::mat4 view);
+  void render(glm::vec3 camPos, glm::vec3 lightPos, glm::mat4 projection, glm::mat4 view);
 
   void setTexture(unsigned int texture1, unsigned int texture2) { this->texture1 = texture1; this->texture2 = texture2; }
+  bool checkCollision(glm::vec3& other, glm::vec3& otherSize);
+  bool checkCollision(GameObject& other);
 
   Shader* shader;
   ObjectShader objectShader;

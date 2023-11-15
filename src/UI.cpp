@@ -22,13 +22,13 @@ UI::UI(GLFWwindow* window) {
   sceneManager = new SceneManager();
 }
 
-void UI::worldUI(Camera* camera, std::vector<CubeObject*>& gameobjects, bool& skyboxEnabled, bool& wireframeMode, float background[4], glm::vec3& lightPos) {
+void UI::worldUI(Player* player, std::vector<CubeObject*>& gameobjects, bool& skyboxEnabled, bool& wireframeMode, float background[4], glm::vec3& lightPos) {
   ImGui::Begin("World");
 
   ImGui::Checkbox("Skybox", &skyboxEnabled);
   ImGui::Checkbox("Wireframe mode", &wireframeMode);
-  ImGui::SliderFloat("FOV", &camera->Fov, 45.0f, 120.0f);
-  ImGui::InputFloat("Speed", &camera->MovementSpeed);
+  ImGui::SliderFloat("FOV", &player->cam->fov, 45.0f, 120.0f);
+  ImGui::InputFloat("Speed", &player->d_speed);
   if (!skyboxEnabled) ImGui::ColorEdit4("Background", background);
   ImGui::InputFloat3("Light pos", &lightPos[0]);
 
@@ -82,7 +82,6 @@ void UI::gameobjectsUI(TextureManager* textureManager, std::vector<CubeObject*>&
 
 void UI::toolkitUI(Camera* camera) {
   ImGui::Begin("Toolkit");
-  if (ImGui::Button("Camera")) camera->MoveFly = !camera->MoveFly;
   ImGui::End();
 }
 

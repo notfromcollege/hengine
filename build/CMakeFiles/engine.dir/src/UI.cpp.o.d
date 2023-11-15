@@ -347,7 +347,8 @@ CMakeFiles/engine.dir/src/UI.cpp.o: \
  /home/abux/Projects/c++/hengine/include/gameObject.h \
  /home/abux/Projects/c++/hengine/include/shader.h \
  /usr/include/c++/13.2.1/sstream /usr/include/c++/13.2.1/bits/sstream.tcc \
- /home/abux/Projects/c++/hengine/include/camera.h \
  /home/abux/Projects/c++/hengine/include/textureManager.h \
  /home/abux/Projects/c++/hengine/include/stb_image.h \
- /usr/include/c++/13.2.1/stdlib.h
+ /usr/include/c++/13.2.1/stdlib.h \
+ /home/abux/Projects/c++/hengine/include/player.h \
+ /home/abux/Projects/c++/hengine/include/camera.h

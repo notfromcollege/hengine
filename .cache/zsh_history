@@ -49,3 +49,29 @@ cd Projects/c++/hengine
 vim
 cd Projects/c++/hengine
 git status
+sudo pacman -S stbimage
+yay -S stbimage
+git add .
+git statys
+git status
+git commit -m "DEEP CLEANING | Lighting improved | Materials | UI Improved (a lil) | etc"
+git push
+git pull
+git pull
+git add .
+git status
+git commit -m "Rong keybinds"
+git push
+cd Projects/c++/hengine
+vim
+nv
+sudo pacman -S btop
+btop
+ftop
+htop
+yay -S vtop
+vtop
+gnome
+sudo pacman -S gnome
+cd Projects/c++/hengine
+vim

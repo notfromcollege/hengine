@@ -8,13 +8,13 @@
 #include <sceneManager.h>
 #include <textureManager.h>
 #include <cubeObject.h>
-#include <camera.h>
+#include <player.h>
 
 class UI {
 public:
   UI(GLFWwindow* window);
 
-  void worldUI(Camera* camera, std::vector<CubeObject*>& gameobjects, bool& skyboxEnabled, bool& wireframeMode, float background[4], glm::vec3& lightPos);
+  void worldUI(Player* player, std::vector<CubeObject*>& gameobjects, bool& skyboxEnabled, bool& wireframeMode, float background[4], glm::vec3& lightPos);
   void gameobjectsUI(TextureManager* textureManager, std::vector<CubeObject*>& gameobjects);
   void toolkitUI(Camera* camera);
   void inspectUI(TextureManager* textureManager, std::vector<CubeObject*>& gameobjects);

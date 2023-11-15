@@ -29,6 +29,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/src/imgui/imgui_widgets.cpp.o.d"
   "CMakeFiles/engine.dir/src/main.cpp.o"
   "CMakeFiles/engine.dir/src/main.cpp.o.d"
+  "CMakeFiles/engine.dir/src/player.cpp.o"
+  "CMakeFiles/engine.dir/src/player.cpp.o.d"
   "CMakeFiles/engine.dir/src/shader.cpp.o"
   "CMakeFiles/engine.dir/src/shader.cpp.o.d"
   "CMakeFiles/engine.dir/src/stb_image.cpp.o"

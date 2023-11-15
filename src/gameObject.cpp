@@ -40,7 +40,7 @@ GameObject::GameObject(glm::vec3 pos, ObjectShader objectShader) : pos(pos), obj
   }
 }
 
-void GameObject::render(Camera* camera, glm::vec3 lightPos, glm::mat4 projection, glm::mat4 view) {
+void GameObject::render(glm::vec3 camPos, glm::vec3 lightPos, glm::mat4 projection, glm::mat4 view) {
   // Use shader
   shader->use();
   // Set uniforms
@@ -51,14 +51,14 @@ void GameObject::render(Camera* camera, glm::vec3 lightPos, glm::mat4 projection
     shader->setVec3("objectColor", objectColor);
     shader->setVec3("lightColor",  1.0f, 1.0f, 1.0f);
     shader->setVec3("lightPos", lightPos);
-    shader->setVec3("camPos", camera->getPos());
+    shader->setVec3("camPos", camPos);
   }
   else if (objectShader == TEXTURED) {
     if (texture1) { glActiveTexture(GL_TEXTURE0); glBindTexture(GL_TEXTURE_2D, texture1); }
     if (texture2) { glActiveTexture(GL_TEXTURE1); glBindTexture(GL_TEXTURE_2D, texture2); }
     shader->setVec3("lightColor",  1.0f, 1.0f, 1.0f);
     shader->setVec3("lightPos", lightPos);
-    shader->setVec3("camPos", camera->getPos());
+    shader->setVec3("camPos", camPos);
   }
   else if (objectShader == LIGHTING) {
     shader->setVec3("lightColor",  1.0f, 0.2f, 0.2f);
@@ -78,6 +78,22 @@ void GameObject::render(Camera* camera, glm::vec3 lightPos, glm::mat4 projection
   if (rot[0] != 0 || rot[1] != 0 || rot[2] != 0) model = glm::rotate(model, 1.0f, rot);
   shader->setMat4("model", model);
   glDrawArrays(GL_TRIANGLES, 0, 288);
+}
+
+bool GameObject::checkCollision(GameObject& other) {
+  bool collX = pos.x + size.x >= other.pos.x && other.pos.x + other.size.x >= pos.x;
+  bool collY = pos.y + size.y >= other.pos.y && other.pos.y + other.size.y >= pos.y;
+  bool collZ = pos.z + size.z >= other.pos.z && other.pos.z + other.size.z >= pos.z;
+
+  return collX && collY && collZ;
+}
+
+bool GameObject::checkCollision(glm::vec3& other, glm::vec3& otherSize) {
+  bool collX = pos.x + size.x >= other.x && other.x + otherSize.x >= pos.x;
+  bool collY = pos.y + size.y >= other.y && other.y + otherSize.y >= pos.y;
+  bool collZ = pos.z + size.z >= other.z && other.z + otherSize.z >= pos.z;
+
+  return collX && collY && collZ;
 }
 
 void GameObject::clean() {

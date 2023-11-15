@@ -10,7 +10,7 @@
 #include <textureManager.h>
 #include <UI.h>
 #include <skybox.h>
-#include <camera.h>
+#include <player.h>
 #include <cubeObject.h>
 #include <planeObject.h>
 
@@ -24,8 +24,6 @@ public:
   void inputs(GLFWwindow* window);
   void render();
 
-  void mouse_callback();
-
   void clean();
 
   GLFWwindow* window;
@@ -36,21 +34,13 @@ private:
   // Instance
   TextureManager* textureManager = nullptr;
   UI* ui = nullptr;
-  Camera* camera = nullptr;
+  Player* player = nullptr;
   GameObject* lightcube = nullptr;
   GameObject* grid = nullptr;
   Skybox* skybox = nullptr;
 
   // UI
   bool showUI = false;
-
-  // Camera
-  float lastX = 1280 / 2.0f;
-  float lastY = 720 / 2.0f;
-  bool firstMouse = !showUI;
-  bool mouseLocked = true;
-  glm::mat4 projection;
-  glm::mat4 view;
 
   // Map
   unsigned int skyboxTex;
@@ -66,6 +56,7 @@ private:
   float lastFrame = 0.0f;
 
   bool wireframeMode = false;
+  glm::mat4 projection, view;
 };
 
 #endif

@@ -350,6 +350,7 @@ CMakeFiles/engine.dir/src/engine.cpp.o: \
  /usr/include/glm/ext/vector_uint1_sized.hpp \
  /usr/include/c++/13.2.1/cstring /usr/include/glm/gtc/type_ptr.inl \
  /home/abux/Projects/c++/hengine/include/gameObject.h \
+ /home/abux/Projects/c++/hengine/include/player.h \
  /home/abux/Projects/c++/hengine/include/camera.h \
  /home/abux/Projects/c++/hengine/include/skybox.h \
  /home/abux/Projects/c++/hengine/include/gameObjects/planeObject.h

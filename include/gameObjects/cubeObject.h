@@ -10,7 +10,6 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <gameObject.h>
-#include <camera.h>
 #include <shader.h>
 
 class CubeObject : public GameObject {

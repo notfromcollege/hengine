@@ -489,6 +489,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/player.o: src/player.cpp.o
+.PHONY : src/player.o
+
+# target to build an object file
+src/player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/player.cpp.o
+.PHONY : src/player.cpp.o
+
+src/player.i: src/player.cpp.i
+.PHONY : src/player.i
+
+# target to preprocess a source file
+src/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
+
+src/player.s: src/player.cpp.s
+.PHONY : src/player.s
+
+# target to generate assembly for a file
+src/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
+
 src/shader.o: src/shader.cpp.o
 .PHONY : src/shader.o
 
@@ -615,6 +639,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/player.o"
+	@echo "... src/player.i"
+	@echo "... src/player.s"
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"

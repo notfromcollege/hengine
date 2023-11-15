@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/abux/Projects/c++/hengine/src/imgui/imgui_tables.cpp" "CMakeFiles/engine.dir/src/imgui/imgui_tables.cpp.o" "gcc" "CMakeFiles/engine.dir/src/imgui/imgui_tables.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/imgui/imgui_widgets.cpp" "CMakeFiles/engine.dir/src/imgui/imgui_widgets.cpp.o" "gcc" "CMakeFiles/engine.dir/src/imgui/imgui_widgets.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/main.cpp" "CMakeFiles/engine.dir/src/main.cpp.o" "gcc" "CMakeFiles/engine.dir/src/main.cpp.o.d"
+  "/home/abux/Projects/c++/hengine/src/player.cpp" "CMakeFiles/engine.dir/src/player.cpp.o" "gcc" "CMakeFiles/engine.dir/src/player.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/shader.cpp" "CMakeFiles/engine.dir/src/shader.cpp.o" "gcc" "CMakeFiles/engine.dir/src/shader.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/stb_image.cpp" "CMakeFiles/engine.dir/src/stb_image.cpp.o" "gcc" "CMakeFiles/engine.dir/src/stb_image.cpp.o.d"
   "/home/abux/Projects/c++/hengine/src/textureManager.cpp" "CMakeFiles/engine.dir/src/textureManager.cpp.o" "gcc" "CMakeFiles/engine.dir/src/textureManager.cpp.o.d"
