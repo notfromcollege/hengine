@@ -1,14 +1,12 @@
 # hengine
 
-Very simple (in development Engine)
+Very simple (in development)
 
 # Dependencies
 **Archlinux**
-> sudo pacman -Sy glfw
-
-> sudo pacman -Sy imgui
-
-> sudo pacman -Sy assimp
+```
+sudo pacman -Sy glfw imgui assimp
+```
 
 **Windows**
 > IDK
@@ -26,4 +24,9 @@ Very simple (in development Engine)
 **Fast as F boi**
 > Hold LSHIFT
 
+**Exit**
+> Press ESCAPE
+
 ![image](https://github.com/abuxTM/hengine/assets/104513379/a77b7d78-92db-418b-95f8-26945c767041)
+
+# TODO
