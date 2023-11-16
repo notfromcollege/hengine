@@ -25,20 +25,22 @@ UI::UI(GLFWwindow* window) {
 void UI::worldUI(Player* player, std::vector<CubeObject*>& gameobjects, bool& skyboxEnabled, bool& wireframeMode, float background[4], glm::vec3& lightPos) {
   ImGui::Begin("World");
 
-  ImGui::Checkbox("Skybox", &skyboxEnabled);
-  ImGui::Checkbox("Wireframe mode", &wireframeMode);
-  ImGui::SliderFloat("FOV", &player->cam->fov, 45.0f, 120.0f);
-  ImGui::InputFloat("Speed", &player->d_speed);
-  if (!skyboxEnabled) ImGui::ColorEdit4("Background", background);
-  ImGui::InputFloat3("Light pos", &lightPos[0]);
+  ImGui::Checkbox("Skybox", &skyboxEnabled);                            // Toggle skybox
+  ImGui::Checkbox("Wireframe mode", &wireframeMode);                    // Toggle wireframe mode
+  ImGui::SliderFloat("FOV", &player->cam->fov, 45.0f, 120.0f);          // FOV changer
+  ImGui::InputFloat("Speed", &player->d_speed);                         // Camera speed changer
+  if (!skyboxEnabled) ImGui::ColorEdit4("Background", background);      // Change background color if skybox is toggled off
+  ImGui::InputFloat3("Light pos", &lightPos[0]);                        // Change light position
 
   ImGui::Spacing();
  
   ImGui::TextColored(ImVec4(0, 1, 1, 1), "Scene");
+  const std::string scene_name;
+  ImGui::InputText("Scene name", scene_name);                           // Choose the name of the file you want to load / save
   // Save & Load -----------------
-  if (ImGui::Button("Save")) { sceneManager->saveScene("scene", gameobjects); }
+  if (ImGui::Button("Save")) { sceneManager->saveScene(scene_name, gameobjects); }     // Save a scene
   ImGui::SameLine();
-  if (ImGui::Button("Load")) { sceneManager->loadScene("scene", gameobjects); }
+  if (ImGui::Button("Load")) { sceneManager->loadScene(scene_name, gameobjects); }     // Load a scene
   // Save & Load -----------------
 
   ImGui::End();
@@ -49,39 +51,49 @@ void UI::gameobjectsUI(TextureManager* textureManager, std::vector<CubeObject*>&
   ImGui::BeginChild("GameObjects");
   ImGui::TextColored(ImVec4(1,1,0,1), "GameObjects");
 
-  ImGui::Text("Selected shader: %i", currentShader);
-  if (ImGui::Button("Textured")) currentShader = 0;
+  ImGui::Text("Selected shader: %i", currentShader);                    // Show selected shader based on selected gameobject
+  if (ImGui::Button("Textured")) currentShader = 0;                     // Select / Change current object shader
   ImGui::SameLine();
   if (ImGui::Button("Colored")) currentShader = 1;
 
+  
+  // Set object name-----------------------
+  std::string name = gameobjects[objectSelected]->objectName;
+  if (ImGui::InputText("Name", name)) { gameobjects[objectSelected]->objectName = name; }
+  // Set object name-----------------------
+
   if (ImGui::Button("Add gameobject")) {
     if (currentShader == 0) {
+      // Create new object with TEXTURED shader
       CubeObject* n_cb = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), GameObject::TEXTURED);
-      n_cb->setTexture(textureManager->objectTextures[0], textureManager->objectTextures[0]);
+      // Set default textures
+      n_cb->setTexture(textureManager->objectTextures[1], textureManager->objectTextures[1]);
+      // Add created object to the gameobjects
       gameobjects.push_back(n_cb);
     } else {
+      // Create new object with COLOR shader
       CubeObject* n_cb = new CubeObject(glm::vec3(0.0f, 0.0f, 0.0f), GameObject::COLOR);
       gameobjects.push_back(n_cb);
     }
   }
 
+  // Itterate between all gameobjects
   for (int i = 0; i < gameobjects.size(); ++i) {
+    // Display / Show all gameobjects id`s
     ImGui::TextColored(ImVec4(0, 1, 1, 1), "ID: %i", i);
     ImGui::SameLine();
 
-    char selectButtonLabel[32];
-    snprintf(selectButtonLabel, sizeof(selectButtonLabel), "Select##%d", i);
-
-    if (ImGui::Button(selectButtonLabel)) { objectSelected = i; }
+    // Sellect gameobject
+    if (ImGui::Button("Select")) { objectSelected = i; }
   }
 
   ImGui::EndChild();
   ImGui::End();
-
 }
 
 void UI::toolkitUI(Camera* camera) {
   ImGui::Begin("Toolkit");
+  // TODO: Add some random tools
   ImGui::End();
 }
 
@@ -125,28 +137,32 @@ void UI::inspectUI(TextureManager* textureManager, std::vector<CubeObject*>& gam
     if (ImGui::Button("Colored")) gameobjects[objectSelected]->objectShader = GameObject::COLOR;
     // Set shaders ------------------
 
+    // Check if selected object has TEXTURED shader
     if (gameobjects[objectSelected]->objectShader == GameObject::TEXTURED) {
-    static unsigned int seltex;
-    ImGui::TextColored(ImVec4(0, 1, 1, 1), "Current object textures");
-    ImGui::Image((void*)(intptr_t)gameobjects[objectSelected]->texture1, ImVec2(60.0f, 60.0f));
-    ImGui::SameLine();
-    ImGui::Image((void*)(intptr_t)gameobjects[objectSelected]->texture2, ImVec2(60.0f, 60.0f));
-    ImGui::Spacing();
-    ImGui::TextColored(ImVec4(0, 1, 1, 1), "Textures");
-
-    for (int i = 0; i < textureManager->btnTextures.size(); ++i) {
-      if (ImGui::ImageButton((void*)(intptr_t)textureManager->btnTextures[i], ImVec2(60.0f, 60.0f))) seltex = textureManager->objectTextures[i];
+      static unsigned int seltex;                                                                       // Some random value
+      ImGui::TextColored(ImVec4(0, 1, 1, 1), "Current object textures");                                // Area of the text
+      ImGui::Image((void*)(intptr_t)gameobjects[objectSelected]->texture1, ImVec2(60.0f, 60.0f));       // Display currently selected texture
       ImGui::SameLine();
-    }
-    ImGui::Spacing();
+      ImGui::Image((void*)(intptr_t)gameobjects[objectSelected]->texture2, ImVec2(60.0f, 60.0f));       // Display currently selected texture
+      ImGui::Spacing();
+      ImGui::TextColored(ImVec4(0, 1, 1, 1), "Textures");
 
-    if (ImGui::Button("Texture")) gameobjects[objectSelected]->texture1 = seltex;
-    ImGui::SameLine();
-    if (ImGui::Button("Texture2")) gameobjects[objectSelected]->texture2 = seltex;
+      // Itterate between all textures for buttons
+      for (int i = 0; i < textureManager->btnTextures.size(); ++i) {
+        // Display all other available textures
+        // This will create a new button for every texture in btnTextures
+        if (ImGui::ImageButton((void*)(intptr_t)textureManager->btnTextures[i], ImVec2(60.0f, 60.0f))) seltex = textureManager->objectTextures[i];
+        ImGui::SameLine();
+      }
+      ImGui::Spacing();
+
+      if (ImGui::Button("Texture")) gameobjects[objectSelected]->texture1 = seltex;       // Overide current object texutre with the new one
+      ImGui::SameLine();
+      if (ImGui::Button("Texture2")) gameobjects[objectSelected]->texture2 = seltex;
     }
   }
-  ImGui::End();
 
+  ImGui::End();
 }
 
 void UI::consoleUI() {
